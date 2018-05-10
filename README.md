@@ -1,2 +1,1 @@
-# blog
-Blog project
+# Blog - Final project for Get Into Tech
