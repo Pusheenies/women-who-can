@@ -36,6 +36,7 @@ CREATE TABLE profiles (
 CREATE TABLE follows (
     member_id INT NOT NULL,
     follower_id INT NOT NULL,
+    PRIMARY KEY (member_id, follower_id),
     FOREIGN KEY (member_id) REFERENCES members(member_id),
     FOREIGN KEY (follower_id) REFERENCES members(member_id)
 );
@@ -68,6 +69,7 @@ CREATE TABLE hashtags (
 CREATE TABLE posts_hashtags (
     post_id INT NOT NULL,
     hashtag_id INT NOT NULL,
+    PRIMARY KEY (post_id, hashtag_id),
     FOREIGN KEY (post_id) REFERENCES posts(post_id),
     FOREIGN KEY (hashtag_id) REFERENCES hashtags(hashtag_id)
 );
@@ -75,6 +77,7 @@ CREATE TABLE posts_hashtags (
 CREATE TABLE favourites (
     post_id INT NOT NULL,
     member_id INT NOT NULL,
+    PRIMARY KEY (post_id, member_id),
     FOREIGN KEY (post_id) REFERENCES posts(post_id),
     FOREIGN KEY (member_id) REFERENCES members(member_id)
 );
