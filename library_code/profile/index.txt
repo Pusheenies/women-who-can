@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pusheen Library - Login</title>
+        <meta charset="UTF-8">
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!--StyleSheets-->
+        <link rel="stylesheet" type="text/css" href="../_css/style.css" />
+        <!--Fonts-->
+        <link rel="stylesheet" type="text/css" href="../_css/ss-pika.css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet" type="text/css"/>
+        
+    </head>
+    <body>
+        <nav class="navbar navbar-expand navbar-dark">
+            <!--TODO: amend URLs to go to register--> 
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../register.php">Register</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="container">
+            <h1>Welcome to the Pusheen Library</h1>
+            
+            <div id="unique-section" class="row">
+                <div class="section">
+                    <form id="login" method="post">
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" name="username" id="username" class="form-control" placeholder="pusheen" required autofocus/>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" name="password" id="password" class="form-control" placeholder="••••••••••" required/>
+                        </div>
+                        <input type="submit" value="Login" class="btn btn-primary"/>
+                    </form>
+                    <div id="error-msg" class="mt-4"><!-- Error message for unsuccessful login --></div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <script src="ajax.js"></script>
+    </body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pusheen Library - Profile</title>
+        <meta charset="UTF-8">
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!--StyleSheets-->
+        <link rel="stylesheet" type="text/css" href="../_css/style.css" />
+        <!--Fonts-->
+        <link rel="stylesheet" type="text/css" href="../_css/ss-pika.css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link href="../_css/toughBtn.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand navbar-dark"> 
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../book_search/book_search.php">Search & Borrow Books</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../logout/logout.php">Logout</a>
+                </li>
+              </ul>
+        </nav>
+        
+        <h1 id="title"><!-- Welcome back "Name" --></h1>
+        
+        <div class="container">
+            <div id="column-1" class="section">
+                <!-- Form will be replaced by a list of recent books for general users -->
+                <h2>Add a New Book</h2>
+                
+                <form id="add-book" method="post">
+                    <div class="form-group">
+                        <label for="title">Title: *</label>
+                        <input type="text" name="title" id="title" class="form-control" placeholder="The Hobbit" required autofocus/>
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Author: *</label>
+                        <input type="text" name="author" id="author" class="form-control" placeholder="J.R.R. Tolkien" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="author">ISBN: *</label>
+                        <input type="text" name="isbn" id="isbn" class="form-control" placeholder="123456789" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="genre">Genre: *</label>
+                        <select class="form-control" id="genre" name="genre" required>
+                            <option value="">Select a genre</option>
+                            <option value="4">Action and Adventure</option>
+                            <option value="21">Art</option>
+                            <option value="28">Autobiographies</option>
+                            <option value="27">Biographies</option>
+                            <option value="12">Children's</option>
+                            <option value="20">Comics</option>
+                            <option value="22">Cookbooks</option>
+                            <option value="23">Diaries</option>
+                            <option value="19">Dictionaries</option>
+                            <option value="2">Drama</option>
+                            <option value="18">Encyclopedias</option>
+                            <option value="29">Fantasy</option>
+                            <option value="10">Guide</option>
+                            <option value="9">Health</option>
+                            <option value="15">History</option>
+                            <option value="7">Horror</option>
+                            <option value="24">Journals</option>
+                            <option value="16">Math</option>
+                            <option value="6">Mystery</option>
+                            <option value="11">Novel</option>
+                            <option value="17">Poetry</option>
+                            <option value="25">Prayer books</option>
+                            <option value="13">Religion</option>
+                            <option value="5">Romance</option>
+                            <option value="3">Satire</option>
+                            <option value="14">Science</option>
+                            <option value="1">Science fiction</option>
+                            <option value="8">Self help</option>
+                            <option value="26">Series</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Format: *</label><br/>
+                        <div class="form-check-inline">    
+                            <input class="form-check-input" type="radio" name="format" id="book-radio" value="Book">
+                            <label class="form-check-label" for="book-radio">
+                              Book
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <input class="form-check-input" type="radio" name="format" id="audiobook-radio" value="Audiobook">
+                            <label class="form-check-label" for="audiobook-radio">
+                              Audiobook
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Condition: *</label><br/>
+                        <div class="form-check-inline">    
+                            <input class="form-check-input" type="radio" name="condition" id="book-radio" value="New">
+                            <label class="form-check-label" for="new-radio">
+                              New
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <input class="form-check-input" type="radio" name="condition" id="audiobook-radio" value="Good">
+                            <label class="form-check-label" for="good-radio">
+                              Good
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <input class="form-check-input" type="radio" name="condition" id="broken-radio" value="Broken">
+                            <label class="form-check-label" for="broken-radio">
+                              Broken
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Image URL:</label>
+                        <input type="text" name="image" id="image" class="form-control" placeholder="http://example.com/image.png"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="publication-year">Publication Year: *</label>
+                        <input type="text" name="publication-year" id="publication-year" class="form-control" placeholder="1937"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="section">Section: *</label>
+                        <input type="text" name="section" id="section" class="form-control" placeholder="Section 3"/>
+                    </div>
+                    <input type="submit" value="Add book" class="btn button toughBtn"/>
+                </form>
+                <div id="result" class="mt-4"><!-- Message after form submission --></div>
+            </div>
+            <div id="user" class="section">
+                <h2>Your Details</h2>
+                <ul id="personal-details">
+                    <!-- Personal details -->
+                </ul>
+            </div>
+            <div id="borrows" class="section">
+                <!-- Past borrows for user / Overdue borrows for staff or admin -->
+            </div>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <script src="scripts.js"></script>
+        <script>
+            var myDiv = $('.review');
+            myDiv.text(myDiv.text().substring(0,150))
+        </script>
+    </body>
+</html>
