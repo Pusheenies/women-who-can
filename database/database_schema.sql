@@ -92,3 +92,8 @@ CREATE TABLE comments (
     FOREIGN KEY (post_id) REFERENCES posts(post_id),
     FOREIGN KEY (member_id) REFERENCES members(member_id)
 );
+
+-- Trigger to hash passwords
+
+CREATE TRIGGER hash_password BEFORE INSERT ON members
+FOR EACH ROW SET NEW.password = PASSWORD(NEW.password);
