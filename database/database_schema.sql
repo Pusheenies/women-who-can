@@ -61,8 +61,7 @@ CREATE TABLE posts (
 );
 
 CREATE TABLE hashtags (
-    hashtag_id INT NOT NULL AUTO_INCREMENT,
-    hashtag_name VARCHAR(50),
+    hashtag_id VARCHAR(30) NOT NULL,
     PRIMARY KEY (hashtag_id)
 );
 
