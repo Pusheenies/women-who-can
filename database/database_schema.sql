@@ -67,7 +67,7 @@ CREATE TABLE hashtags (
 
 CREATE TABLE posts_hashtags (
     post_id INT NOT NULL,
-    hashtag_id INT NOT NULL,
+    hashtag_id VARCHAR(30) NOT NULL,
     PRIMARY KEY (post_id, hashtag_id),
     FOREIGN KEY (post_id) REFERENCES posts(post_id),
     FOREIGN KEY (hashtag_id) REFERENCES hashtags(hashtag_id)
