@@ -97,3 +97,19 @@ CREATE TABLE comments (
 
 CREATE TRIGGER hash_password BEFORE INSERT ON members
 FOR EACH ROW SET NEW.password = PASSWORD(NEW.password);
+
+-- Stored procedure to add members
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `add_member`(IN `USRNAME` VARCHAR(30), IN `PASS` VARCHAR(50), IN `SECGROUP` VARCHAR(20), IN `SNAME` VARCHAR(30), IN `FNAME` VARCHAR(30), IN `EMAIL` VARCHAR(60), IN `PDESCRIPT` TINYTEXT)
+BEGIN
+insert into members (username, password, security_group)
+values (USRNAME, PASS, SECGROUP);
+insert into profiles (member_id, surname, forename,  email, profile_description) 
+values 
+((select member_id from members where username=USRNAME order by member_id 
+DESC limit 1),
+SNAME, FNAME,  EMAIL, PDESCRIPT);
+END$$
+DELIMITER ;
+
