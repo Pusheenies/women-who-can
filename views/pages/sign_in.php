@@ -3,14 +3,14 @@
     <head>
         <title>Women Who Can - Sign in</title>
         <meta charset="UTF-8">
-        <!--Bootstrap-->
+        <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <!-- Redirect to Home page if user is signed in -->
         <?php
             $member_id = filter_input(INPUT_COOKIE, 'member_id', FILTER_SANITIZE_STRING);
             $security = filter_input(INPUT_COOKIE, 'security', FILTER_SANITIZE_STRING);
             if ($member_id && $security) {
-                header("Location:home.php");
+                header("Location:../../index.php");
             }
         ?>
     </head>
@@ -41,6 +41,9 @@
                         <input type="submit" value="Sign in" class="btn button"/>
                     </form>
                     <div id="error-msg" class="mt-4"><!-- Error message for unsuccessful sign in --></div>
+                    
+                    <!-- TODO: Amend link to registration form -->
+                    <div>Not a member? <a href="#">Sign up</a> to access your personal profile<div>
                 </div>
             </div>
         </div>
