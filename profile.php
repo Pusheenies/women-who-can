@@ -20,7 +20,7 @@ $row= $stmt->fetch(PDO::FETCH_ASSOC);
 $member= new Member($row["member_id"], $row["username"], $row["password"],
                     $row["security_group"], $row["registration_date"]);
 
-//fetching member favourite posts
+//fetching member favourite posts (returns array of Post objects)
 $favourites= $member->getFavourites($pdo);
 
 //fetching member followers
@@ -29,6 +29,10 @@ $followers= $member->getFollowers($pdo);
 //fetching followed members
 $followed= $member->getFollowed($pdo);
 
+//if writer, fetching posts that member has written
+if($member->getSecurity_group()==="writer"){
+    $own_posts= $member->getOwnPosts($pdo);
+}
 ?>
 
 <html>
@@ -90,6 +94,17 @@ $followed= $member->getFollowed($pdo);
             </p>
         </div>
 
+
+        <?php
+        if(isset($own_posts)){
+            echo "<div class='container' id='own_posts'>";
+            echo "<h2>Your posts</h2>";
+            foreach($own_posts as $post){
+                echo $post->getTitle();
+            }
+        }
+
+        ?>
 
         
         <!-- Bootstrap JS -->

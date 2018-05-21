@@ -29,58 +29,52 @@ class Member {
         return $this->registration_date;
     }
     function getFavourites($pdo){
-        $stmt= $pdo->prepare("SELECT * FROM favourites f WHERE member_id=:id");
+        $stmt= $pdo->prepare("SELECT * FROM posts p
+                                JOIN favourites f ON f.post_id=p.post_id
+                                WHERE f.member_id=:id");
         $stmt->execute(array(":id" => $_SESSION["id"]));
-        $favourites_ids= [];
-        while($row= $stmt->fetch(PDO::FETCH_ASSOC)){
-            array_push($favourites_ids, $row["post_id"]);  
-        }
         $favourites= [];
-        foreach($favourites_ids as $favourite){
-            $stmt= $pdo->prepare("SELECT * FROM posts p WHERE post_id=:post_id");
-            $stmt->execute(array(":post_id" => $favourite));
-            $row= $stmt->fetch(PDO::FETCH_ASSOC);
-            $post= new Post($row["post_id"], $row["post_date"], $row["category_id"], $row["member_id"],
-                            $row["title"], $row["post_image"], $row["post_content"]);
-            array_push($favourites, $post);
+        while($row= $stmt->fetch(PDO::FETCH_ASSOC)){
+            $favourite= new Post($row["post_id"], $row["post_date"],$row["category_id"],$row["member_id"],
+                                $row["title"], $row["post_image"],$row["post_content"]);
+            array_push($favourites, $favourite);  
         }
         return $favourites;
     }
     function getFollowers($pdo){
-        $stmt= $pdo->prepare("SELECT follower_id FROM follows WHERE member_id=:id");
+        $stmt= $pdo->prepare("SELECT m.username FROM members m
+                                JOIN follows f ON f.follower_id=m.member_id
+                                WHERE f.member_id=:id");
         $stmt->execute(array(":id" => $_SESSION["id"]));
-        $followers_ids= [];
-        while($row= $stmt->fetch(PDO::FETCH_ASSOC)){
-            array_push($followers_ids, $row["follower_id"]);
-        }
         $followers= [];
-        foreach($followers_ids as $follower){
-            $stmt= $pdo->prepare("SELECT username FROM members WHERE member_id=:id");
-            $stmt->execute(array(":id" => $follower));
-            $row= $stmt->fetch(PDO::FETCH_ASSOC);
+        while($row= $stmt->fetch(PDO::FETCH_ASSOC)){
             array_push($followers, $row["username"]);
         }
         return $followers;
     }
     function getFollowed($pdo){
-        $stmt= $pdo->prepare("SELECT member_id FROM follows WHERE follower_id=:id");
+        $stmt= $pdo->prepare("SELECT username FROM members m
+                                JOIN follows f ON f.member_id=m.member_id
+                                WHERE f.follower_id=:id");
         $stmt->execute(array(":id" => $_SESSION["id"]));
-        $followed_ids= [];
-        while($row= $stmt->fetch(PDO::FETCH_ASSOC)){
-            array_push($followed_ids, $row["member_id"]);
-        }
         $followed= [];
-        foreach($followed_ids as $member){
-            $stmt= $pdo->prepare("SELECT username FROM members WHERE member_id=:id");
-            $stmt->execute(array(":id" => $member));
-            while ($row= $stmt->fetch(PDO::FETCH_ASSOC)){
-                array_push($followed, $row["username"]);
-            }
+        while($row= $stmt->fetch(PDO::FETCH_ASSOC)){
+            array_push($followed, $row["username"]);
         }
         return $followed;
     }
+    function getOwnPosts($pdo){
+        $stmt= $pdo->prepare("SELECT * FROM posts WHERE member_id=:id");
+        $stmt->execute(array(":id" => $_SESSION["id"]));
+        $own_posts= [];
+        while($row= $stmt->fetch(PDO::FETCH_ASSOC)){
+            $own_post= new Post($row["post_id"], $row["post_date"],$row["category_id"],$row["member_id"],
+                                $row["title"], $row["post_image"],$row["post_content"]);
+            array_push($own_posts, $own_post);
+        }
+        return $own_posts;
+    }
 }
-
 
 class Post {
     protected $post_id;
@@ -120,5 +114,4 @@ class Post {
     function getPost_content() {
         return $this->post_content;
     }
-
 }
