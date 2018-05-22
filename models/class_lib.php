@@ -25,9 +25,9 @@ class Member_Sign_In {
             $this->member_id = $result['member_id'];
             $this->security_group = $result['security_group'];
 
-            $response = "Sign In Successful";
+            $response = "Sign in successful";
         } else {
-            $response = "Sign In Unsuccessful";
+            $response = "Sign in unsuccessful";
         }
         return $response;
     }
