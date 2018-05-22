@@ -11,9 +11,14 @@
         <h1 class="text-center">Welcome back <span id="welcome"><!--username--></span></h1>
         <div class="container">
             <h2>Your details</h2>
+            <p><span id="profile_image"><!--profile image--></span></p>
+            <p>Forename: <span id="forename"><!--forename--></span></p>
+            <p>Surname: <span id="surname"><!--surname--></span></p>
             <p>Username: <span id="username"><!--username--></span></p>
+            <p>Email: <span id="email"><!--email--></span></p>
             <p>Password: ********</p>
-            <a href="#" class="btn btn-primary">Edit</a>
+            <p>Profile description: <span id="profile_description"><!--profile description--></span></p>
+            <a href="#" class="btn btn-primary">Edit details</a>
         </div>
         <div class="container">
             <p><span id="own_posts"><!--if writer: own posts--></span></p>
@@ -21,17 +26,19 @@
         <div class="container">
             <h2>Your favourite posts</h2>
             <p id="favourites"><!--favourite posts--></p>
+            <a href="#" class="btn btn-primary">Update favourites</a>
         </div>
         <div class="container">
             <h2>Follows</h2>
             <p>Followers: <span id="followers"><!--followers--></span></p>
             <p>Members you follow: <span id="followed"><!--followed members--></span></p>
+            <a href="#" class="btn btn-primary">Edit follows</a>
         </div>
 
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-        <script src="profile.js"></script>
+        <script src="../controllers/profile.js"></script>
     </body>
 </html>

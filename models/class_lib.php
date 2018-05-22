@@ -6,12 +6,22 @@ class Member {
     protected $password;
     protected $security_group;
     protected $registration_date;
-    function __construct($member_id, $username, $password, $security_group, $registration_date) {
+    protected $email;
+    protected $profile_image;
+    protected $forename;
+    protected $surname;
+    protected $profile_description;
+    function __construct($member_id, $username, $password, $security_group, $registration_date, $email, $profile_image, $forename, $surname, $profile_description) {
         $this->member_id = $member_id;
         $this->username = $username;
         $this->password = $password;
         $this->security_group = $security_group;
         $this->registration_date = $registration_date;
+        $this->email = $email;
+        $this->profile_image = $profile_image;
+        $this->forename = $forename;
+        $this->surname = $surname;
+        $this->profile_description;
     }
     function getMember_id() {
         return $this->member_id;
@@ -27,6 +37,21 @@ class Member {
     }
     function getRegistration_date() {
         return $this->registration_date;
+    }
+    function getEmail() {
+        return $this->email;
+    }
+    function getProfile_image() {
+        return $this->profile_image;
+    }
+    function getForename() {
+        return $this->forename;
+    }
+    function getSurname() {
+        return $this->surname;
+    }
+    function getProfile_description() {
+        return $this->profile_description;
     }
     function getFavourites($pdo){
         $stmt= $pdo->prepare("SELECT * FROM posts p
