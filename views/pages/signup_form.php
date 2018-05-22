@@ -11,7 +11,7 @@
     <div class="container">
         <h1>Sign Up For Free</h1>
         <div>
-            <b class="text-white" style="float:right">Already a member? <a href="#" class="text-white" style="text-decoration:underline;">Sign in</a></b>
+            <b class="text-white" style="float:right">Already a member? <a href="sign_in.php" class="text-white" style="text-decoration:underline;">Sign in</a></b>
             <br>
         </div>
         <div id="unique-section" class="row">
@@ -28,7 +28,7 @@
 
                     <div class="form-group">
                         <label>Email:</label>
-                        <input type="email" name="email" class="form-control" placeholder="womenwhocan.com" required/>
+                        <input type="email" name="email" class="form-control" placeholder="ada@womenwhocan.com" required/>
                     </div>
                     <div class="form-group">
                         <label>Username:</label>
