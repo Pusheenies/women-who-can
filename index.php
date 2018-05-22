@@ -8,7 +8,9 @@
         <?php require('connection.php'); ?>
     </head>
     <body>
-    
+    <!-- Just adding these as a test to link the pages -->
+        <a href="views/pages/sign_in.php">Sign in</a>
+        <a href="controllers/sign_out_controller.php">Sign out</a>
     <!-- This is Peter's example code to decide what page to display -->
     <?php /*
         if (isset($_GET['controller']) && isset($_GET['action'])) {

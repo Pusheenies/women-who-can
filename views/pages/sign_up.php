@@ -16,7 +16,7 @@
         </div>
         <div id="unique-section" class="row">
             <div class="section">
-                <form method="post" action="../../controllers/signup_controller.php">
+                <form method="post" action="../../controllers/sign_up_controller.php">
                     <div class="form-group">
                         <label>First Name:</label>
                         <input type="text" name="forename" class="form-control" placeholder="Ada" required autofocus/>
