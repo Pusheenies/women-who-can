@@ -1,5 +1,5 @@
-	
-<!DOCUTYPE html>
+
+<!DOCTYPE html>
 <html>
     <head>
         <title>
@@ -12,5 +12,5 @@
             <button type="submit" name="submit">UPLOAD</button>
             </form>
         </div>
-    
+
     </html>
