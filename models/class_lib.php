@@ -21,7 +21,7 @@ class Member {
         $this->profile_image = $profile_image;
         $this->forename = $forename;
         $this->surname = $surname;
-        $this->profile_description;
+        $this->profile_description = $profile_description;
     }
     function getMember_id() {
         return $this->member_id;
@@ -98,6 +98,33 @@ class Member {
             array_push($own_posts, $own_post);
         }
         return $own_posts;
+    }
+    function updateDetails($pdo, $data, $id){
+        //checking the password
+        $stmt= $pdo->prepare("SELECT username FROM members WHERE member_id=:id AND password=PASSWORD(:password)");
+        $stmt->execute(array(":id" => $id, ":password" => $data["password"]));
+        $row= $stmt->fetch(PDO::FETCH_ASSOC);
+        if($row){
+            //updating the profiles table
+            $stmt= $pdo->prepare("UPDATE profiles 
+                                SET forename=:forename, surname=:surname, email=:email, profile_description=:profile_description
+                                WHERE member_id=:id");
+            $stmt->execute(array(":forename" => $data["forename"],
+                                ":surname" => $data["surname"],
+                                ":email" => $data["email"],
+                                ":profile_description" => $data["profile_description"],
+                                ":id" => $id));
+            //updating the members table
+            $stmt= $pdo->prepare("UPDATE members
+                                SET username=:username, password=PASSWORD(:password)
+                                WHERE member_id=:id");
+            $stmt->execute(array(":username" => $data["username"], 
+                                ":password" => $data["password"],
+                                ":id" => $id));
+            return "Details successfully updated.";
+        } else {
+            return "Wrong password, please try again.";
+        }
     }
 }
 
