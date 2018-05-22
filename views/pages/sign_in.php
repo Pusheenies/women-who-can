@@ -41,7 +41,6 @@
                     </form>
                     <div id="error-msg" class="mt-4"><!-- Error message for unsuccessful sign in --></div>
                     
-                    <!-- TODO: Amend link to registration form -->
                     <div>Not a member? <a href="sign_up.php">Sign up</a> to access your personal profile<div>
                 </div>
             </div>

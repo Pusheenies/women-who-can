@@ -11,12 +11,12 @@
     <div class="container">
         <h1>Sign Up For Free</h1>
         <div>
-            <b class="text-white" style="float:right">Already a member? <a href="sign_in.php" class="text-white" style="text-decoration:underline;">Sign in</a></b>
+            <b style="float:right">Already a member? <a href="sign_in.php" style="text-decoration:underline;">Sign in</a></b>
             <br>
         </div>
         <div id="unique-section" class="row">
             <div class="section">
-                <form method="post" action="../../controllers/sign_up_controller.php">
+                <form id="sign-up" method="post">
                     <div class="form-group">
                         <label>First Name:</label>
                         <input type="text" name="forename" class="form-control" placeholder="Ada" required autofocus/>
@@ -52,6 +52,8 @@
                         <input type="submit" name="signup" value="Sign Up" class="btn btn-primary" />
                     </div>
                 </form>
+                <div id="error-msg" class="mt-4"><!-- Error message for unsuccessful sign in --></div>
+                    
             </div>
         </div>
     </div>
@@ -62,6 +64,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="../../controllers/sign_up_controller.js"></script>
 </body>
 
 </html>
