@@ -8,12 +8,15 @@
     </head>
 
     <body>
-        <h1 class="text-center">Welcome back</h1>
+        <h1 class="text-center">Welcome back <span id="welcome"><!--username--></span></h1>
         <div class="container">
             <h2>Your details</h2>
             <p>Username: <span id="username"><!--username--></span></p>
             <p>Password: ********</p>
             <a href="#" class="btn btn-primary">Edit</a>
+        </div>
+        <div class="container">
+            <p><span id="own_posts"><!--if writer: own posts--></span></p>
         </div>
         <div class="container">
             <h2>Your favourite posts</h2>
@@ -24,9 +27,7 @@
             <p>Followers: <span id="followers"><!--followers--></span></p>
             <p>Members you follow: <span id="followed"><!--followed members--></span></p>
         </div>
-        <div class="container" id="own_posts">
 
-        </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
