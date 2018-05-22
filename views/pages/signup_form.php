@@ -19,11 +19,11 @@
                 <form method="post" action="../../controllers/signup_controller.php">
                     <div class="form-group">
                         <label>First Name:</label>
-                        <input type="text" name="forename" class="form-control" placeholder="First Name" required autofocus/>
+                        <input type="text" name="forename" class="form-control" placeholder="Ada" required autofocus/>
                     </div>
                     <div class="form-group">
                         <label>Last Name</label>
-                        <input type="text" name="surname" class="form-control" placeholder="Last Name" required/>
+                        <input type="text" name="surname" class="form-control" placeholder="Lovelace" required/>
                     </div>
 
                     <div class="form-group">
@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group">
                         <label>Username:</label>
-                        <input type="text" name="username" class="form-control" placeholder="Username" required/>
+                        <input type="text" name="username" class="form-control" placeholder="AdaLovelace" required/>
                     </div>
 
                     <div class="form-group">
