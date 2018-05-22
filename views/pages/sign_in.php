@@ -16,7 +16,6 @@
     </head>
     <body>
         <!-- TODO: Here goes the navbar -->
-        
         <div class="container">
             <h1>Welcome back to Women Who Can</h1>
             <h2>Sign in to access more of the amazing features of our site</h2>
@@ -43,7 +42,7 @@
                     <div id="error-msg" class="mt-4"><!-- Error message for unsuccessful sign in --></div>
                     
                     <!-- TODO: Amend link to registration form -->
-                    <div>Not a member? <a href="#">Sign up</a> to access your personal profile<div>
+                    <div>Not a member? <a href="sign_up.php">Sign up</a> to access your personal profile<div>
                 </div>
             </div>
         </div>
