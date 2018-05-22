@@ -32,7 +32,9 @@ if($member["security_group"]==="writer"){
 $favourites= $member_object->getFavourites($pdo);
 $member["favourites"]= [];
 foreach($favourites as $favourite){
-    $favourite_details= [htmlentities($favourite->getTitle()), $favourite->getPost_id(), $favourite->getPost_date()];
+    $time_diff= (time()-strtotime($favourite->getPost_date())) / (60*60*24);
+    $time_diff= floor($time_diff);
+    $favourite_details= [htmlentities($favourite->getTitle()), $favourite->getPost_id(), $time_diff, htmlentities($favourite->getPost_content())];
     array_push($member["favourites"], $favourite_details);
 }
 

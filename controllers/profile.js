@@ -20,8 +20,7 @@ $(document).ready(function(){
                 $("#own_posts").append("<div class='card w-50' style='margin-bottom:10px;'>"
                                         +"<div class='card-body'><h5>"+member.own_posts[i][0]+"</h5>"
                                         +"<p class='card-text'>"+member.own_posts[i][3]+"</p>"
-                                        +"<a href='#' class='text-warning' style='margin:0 5px 0 5px;'>Edit</a>"
-                                        +"<a href='#' class='text-danger' style='margin:0 5px 0 5px;'>Delete</a>"
+                                        +"<a href='#' class='btn btn-warning'>Edit/delete post</a>"
                                         +"</div>"
                                         +"<div class='card-footer text-center'>"
                                         +member.own_posts[i][2]+$days
@@ -32,9 +31,24 @@ $(document).ready(function(){
         }
 
         if(member["favourites"].length!==0){
+            $("#favourites").append("<div class='container'>");
             for (var i=0; i<member["favourites"].length; i++){ 
-                $("#favourites").append(member.favourites[i][0]+"<br>");
+                if(member.favourites[i][2]>1){
+                    $days= " days ago";
+                } else {
+                    $days= " day ago";
+                }
+                $("#favourites").append("<div class='card w-50' style='margin-bottom:10px;'>"
+                                        +"<div class='card-body'><h5>"+member.favourites[i][0]+"</h5>"
+                                        +"<p class='card-text'>"+member.favourites[i][3]+"</p>"
+                                        +"</div>"
+                                        +"<div class='card-footer text-center'>"
+                                        +member.favourites[i][2]+$days
+                                        +"</div>"
+                                        +"</div>");
             }
+            $("#favourites").append("</div>"
+                                    +"<a href='#' class='btn btn-info'>Update favourites</a>");
         } else {
             $("#favourites").append("No favourites yet.");
         }
@@ -51,6 +65,7 @@ $(document).ready(function(){
             for(var i=0; i<member["followed"].length; i++){
                 $("#followed").append(member.followed[i]+" ");
             }
+            $("#followed").append("<p><a href='#' class='btn btn-info'>Update followed members</a></p>");
         } else {
             $("#followed").append("You're not following anyone at the moment.");
         }
