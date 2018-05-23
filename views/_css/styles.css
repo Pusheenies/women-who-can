@@ -1,0 +1,9 @@
+#sign-in, #sign-out {
+    display: flex;
+    width: 100%;
+    background: transparent;
+    justify-content: flex-end;
+    padding: 10px 15px 0 0;
+    color: white;
+}
+
