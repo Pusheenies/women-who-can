@@ -23,7 +23,7 @@ if($member["security_group"]==="writer"){
     foreach($own_posts as $post){
         $time_diff= (time()-strtotime($post->getPost_date())) / (60*60*24);
         $time_diff= floor($time_diff);
-        $post_details= [htmlentities($post->getTitle()), $post->getPost_id(), $time_diff, htmlentities($post->getPost_content())];
+        $post_details= [htmlentities($post->getTitle()), $post->getPost_id(), $time_diff, htmlentities($post->getPost_content()), $post->getPost_image()];
         array_push($member["own_posts"], $post_details);
     }
 }
@@ -34,7 +34,7 @@ $member["favourites"]= [];
 foreach($favourites as $favourite){
     $time_diff= (time()-strtotime($favourite->getPost_date())) / (60*60*24);
     $time_diff= floor($time_diff);
-    $favourite_details= [htmlentities($favourite->getTitle()), $favourite->getPost_id(), $time_diff, htmlentities($favourite->getPost_content())];
+    $favourite_details= [htmlentities($favourite->getTitle()), $favourite->getPost_id(), $time_diff, htmlentities($favourite->getPost_content()), $favourite->getPost_image()];
     array_push($member["favourites"], $favourite_details);
 }
 
