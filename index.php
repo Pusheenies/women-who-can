@@ -14,7 +14,7 @@
     </head>
     <body>
         <div id="container">
-            <div id="header">
+            <div id="header" class="header-w-btn">
                 <!-- Display Sign in or Sign out button -->
                 <?php
                     $member_id = filter_input(INPUT_COOKIE, 'member_id', FILTER_SANITIZE_STRING);
@@ -42,7 +42,6 @@
                   <li><a href="#">Learning</a></li>
                   <li><a href="#">Role Models</a></li>
                   <li><a href="#">Science</a></li>
-                  <li><a href="#">Sign In</a></li>
                   <li class="icon"><a href="#">🔎</a></li>
                 </ul>
               </div>
