@@ -36,9 +36,19 @@
         <h2 class="text-center" style="font-size:24px;">Edit details</h2>
         <div class="container" id="form_container">
             <div>
-                <p>Current profile image:</p>
                 <span id="profile_image"><!--current profile image--></span>
             </div>
+
+            <div>
+                <form action="../models/image_upload.php" method="POST" enctype="multipart/form-data">
+                    <div class="form-group row">
+                        <p>Upload a new image:</p>
+                        <input type="file" name="file">
+                        <input type="submit" name="submit" value="UPLOAD" class="peach" id="upload_image">
+                    </div>
+                </form>
+            </div>
+
             <form method="post" id="update_details" action="../models/update_detailsModel.php">
                 <div class="form-group row">
                     <label for="forename">Forename:</label>
@@ -62,7 +72,7 @@
                 </div>
                 <div class="form-group row">
                     <label for="profile_description">Profile description:</label>
-                    <input type="textarea" name="profile_description" class="form-control" id="profile_description"/>
+                    <textarea name="profile_description" class="form-control" id="profile_description"></textarea>
                 </div>
                 <div>
                     <input type="submit" value="CONFIRM" id="confirm" class="peach"><br>

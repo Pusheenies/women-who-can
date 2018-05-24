@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $.getJSON("../models/profileModel.php", function (member){
         console.log(member);
-        $("#profile_image").append("<img src='"+member.profile_image+"'>");
+        $("#profile_image").append("<img src='"+member.profile_image+"' style='max-height:200px;width:auto;'>");
         $("#forename").val(member.forename);
         $("#surname").val(member.surname);
         $("#username").val(member.username);
@@ -10,11 +10,3 @@ $(document).ready(function(){
         
     });
 });
-
-$("#update_details").submit(function(){
-    var data= $("#update_details").serialize();
-    
-    $.post("../models/update_detailsModel.php", data).done(function (){
-        console.log("done");
-    });
-})

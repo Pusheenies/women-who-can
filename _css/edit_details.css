@@ -3,6 +3,11 @@
     background-color: white;
     font-size: 22px;
 }
+#upload_image {
+    border: none;
+    background-color: white;
+    font-size: 18px;
+}
 #form_container {
     text-align:center;
 }
@@ -15,4 +20,7 @@ label {
 }
 p {
     font-size: 16px;
+}
+textarea {
+    height: 150px;
 }
