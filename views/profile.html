@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>Profile</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <!--StyleSheets-->
+        <link rel="stylesheet" type="text/css" href="../_css/style.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/profile.css" />
+        <!--Fonts-->
+        <link rel="stylesheet" type="text/css" href="../_css/ss-pika.css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    </head>
+
+    <body>
+            
+        <div id="header">
+            <a href="#"><img src="../_img/logo/LogoWhite.png"></a>
+        </div>
+
+        <!-- NAV -->
+        <div id="nav" style="height:52px;">
+            <div class="container">
+            <ul>
+                <li><a href="#" class="peach">Home</a></li>
+                <li><a href="#">Personal</a></li>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li class="icon"><a href="#">🔎</a></li>
+            </ul>
+            </div>
+        </div>
+
+        
+        <div id="about" class="right">
+            <h2>About me</h2>
+            <span id="profile_image"><!--profile image--></span>
+            <p>Forename: <span id="forename"><!--forename--></span></p>
+            <p>Surname: <span id="surname"><!--surname--></span></p>
+            <p>Username: <span id="username"><!--username--></span></p>
+            <p>Email: <span id="email"><!--email--></span></p>
+            <p>Profile description: <span id="profile_description"><!--profile description--></span></p>
+            <a href="update_details.html" class="" id="edit_details">Edit details</a>
+        </div>
+
+        <div class="container" id="own_posts">
+            <!--if writer: own posts-->
+        </div>
+
+        <div class="container" id="favourites">
+            <!--favourite posts-->
+        </div>
+
+        <div class="container" id="followers">
+                <!--followers-->
+        </div>
+        
+        <div class="container" id="followed">
+                <!--followed members-->
+        </div>
+
+
+        <div class="clear"></div> <!--needed for the footer to be at the bottom-->
+        <!-- FOOTER -->
+        <div id="footer">
+            <div class="container">
+                <h4>Women Who Can &copy;</h4>
+            </div>
+        </div>
+            
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <script src="../controllers/profile.js"></script>
+    </body>
+</html>
