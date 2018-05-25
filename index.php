@@ -10,43 +10,85 @@
         <!--Fonts-->
         <link rel="stylesheet" type="text/css" href="/women-who-can/views/_css/ss-pika.css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        <link href="views/_css/styles.css" rel="stylesheet" type="text/css"/>
+        <link href="/women-who-can/views/_css/styles.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <div id="container">
             <div id="header" class="header-w-btn">
                 <!-- Display Sign in or Sign out button -->
                 <?php
-                    $member_id = filter_input(INPUT_COOKIE, 'member_id', FILTER_SANITIZE_STRING);
-                    $security = filter_input(INPUT_COOKIE, 'security', FILTER_SANITIZE_STRING);
-                    if (!$member_id || !$security) {
-                        echo "<div id='sign-in'>
+                $member_id = filter_input(INPUT_COOKIE, 'member_id', FILTER_SANITIZE_STRING);
+                $security = filter_input(INPUT_COOKIE, 'security', FILTER_SANITIZE_STRING);
+                if (!$member_id || !$security) {
+                    echo "<div id='sign-in'>
                                 <a class='btn btn-outline-light' href='views/pages/sign_in.php'>Sign in</a>
                               </div>";
-                    } else {
-                        echo "<div id='sign-out'>
+                } else {
+                    echo "<div id='sign-out'>
                                 <a class='btn btn-outline-light' href='controllers/sign_out_controller.php'>Sign out</a>
                               </div>";
-                    }
+                }
                 ?>
-              <a href="#"><img src="/women-who-can/views/_img/logo/LogoWhite.png"></a>
+                <a href="#"><img src="/women-who-can/views/_img/logo/LogoWhite.png"></a>
             </div>
             <!-- NAV -->
-            <div id="nav">
-              <div class="container">
-                <!-- TODO: Expandable menu when screen size is small -->
-                <ul>
-                  <li><a href="#" class="peach">Home</a></li>
-                  <li><a href="#">Comedy</a></li>
-                  <li><a href="#">Innovation</a></li>
-                  <li><a href="#">Learning</a></li>
-                  <li><a href="#">Role Models</a></li>
-                  <li><a href="#">Science</a></li>
-                  <li class="icon"><a href="#">🔎</a></li>
-                </ul>
-              </div>
+            <div id="nav" class="navbar navbar-expand-md navbar-light">
+                <div class="container">
+                    <ul>
+                        <li><a class="peach" href="#">Home</a></li>
+                    </ul>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav full">
+                            <li><a href="#">Profile</a></li>
+                            <li><a class="" href="#">Comedy</a></li>
+                            <li><a class="" href="#">Innovate</a></li>
+                            <li><a class="" href="#">Learn</a></li>
+                            <li><a class="" href="#">Inspire</a></li>
+                            <li class="icon"><a href="#">🔎</a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
             </div>
-            
+
+            <!-- BOTTOM SECTION -->
+            <div class="container">
+                <div id="blogPosts" class="home">
+                    <ul class="postList">
+                        <li class="blogPostsHome">
+                            <a href="#"><div class="blogpic left" style="background-image: url(/women-who-can/views/_img/Women-who-can-Ruqsana-Begum-01.jpg);"></div></a>
+                            <div class="right">
+                                <a href="#"><h1>Meet Ruqsana Begum</h1></a>
+                                <h6>By <a href="#" class="peach">Amy Wu</a> - Posted on 18 Apr 18</h6>
+                            </div>
+                        </li>
+                        <li class="blogPostsHome">
+                            <a href="#"><div class="blogpic left" style="background-image: url(_img/women-leaders-powerful.jpg);"></div></a>
+                            <div class="right">
+                                <a href="#"><h1>Blog Item Title</h1></a>
+                                <h6>By <a href="#" class="peach">Amy Wu</a> - Posted on 18 Apr 18</h6>
+                            </div>
+                        </li>
+                        <li class="blogPostsHome">
+                            <a href="#"><div class="blogpic left" style="background-image: url(_img/desk.jpg);"></div></a>
+                            <div class="right">
+                                <a href="#"><h1>Blog Item Title</h1></a>
+                                <h6>By <a href="#" class="peach">Amy Wu</a> - Posted on 18 Apr 18</h6>
+                            </div>
+                        </li>
+                        <li class="blogPostsHome">
+                            <a href="#"><div class="blogpic left" style="background-image: url(_img/women-prints.jpg);"></div></a>
+                            <div class="right">
+                                <a href="#"><h1>Blog Item Title</h1></a>
+                                <h6>By <a href="#" class="peach">Amy Wu</a> - Posted on 18 Apr 18</h6>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <!-- NEXT -->
             <div id="nextlink">
               <div class="container">

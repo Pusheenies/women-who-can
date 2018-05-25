@@ -6,7 +6,7 @@ body, html, ul, li {
     height: 100%;
     margin: 0;
     color: #bababa;
-    font-family:
+    /*font-family:*/
 }
 
 .right { float: right; }
@@ -30,7 +30,7 @@ body { font-family: 'Open Sans', sans-serif; }
 .icon { font-family: "SSPika"; }
 
 .peach, #about a { color: #ffb676; }
-.peach:hover, , #about a:hover { color: #f49847; }
+.peach:hover, #about a:hover { color: #f49847; }
 a { color: darkgrey; }
 a:hover { color: grey; }
 .icon a { color: white; }
@@ -57,7 +57,7 @@ h6 a, #about a { font-weight: bold; }
 /* TOP */
 
 #header {
-  background-image: url(../_img/o-BLACK-BUSINESS-WOMAN-DESK-facebook.jpg);
+  background-image: url(/women-who-can/views/_img/o-BLACK-BUSINESS-WOMAN-DESK-facebook.jpg);
   background-size: cover;
   background-position: center;
   text-align: center;
@@ -66,14 +66,14 @@ h6 a, #about a { font-weight: bold; }
 
 /* NAV */
 
-#nav {padding: 14px 0; box-shadow:  0 0 10px lightgray; margin-bottom: 50px;}
-#nav ul { position: relative; }
-#nav ul li{ display: inline-block; margin-right: 30px; }
+#nav { padding: 14px 0; box-shadow:  0 0 10px lightgray; margin-bottom: 50px; }
+/*#nav ul { position: relative; }*/
+#nav ul li { display: inline-block; margin-right: 30px; }
 
 
 #nav ul .icon {
-  position: absolute;
-  right: 0;
+  /*position: absolute;*/
+  /*right: 0;*/
   margin-right: 0;
 }
 #nav ul .icon a {
