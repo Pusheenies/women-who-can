@@ -20,11 +20,11 @@
                 $member_id = filter_input(INPUT_COOKIE, 'member_id', FILTER_SANITIZE_STRING);
                 $security = filter_input(INPUT_COOKIE, 'security', FILTER_SANITIZE_STRING);
                 if (!$member_id || !$security) {
-                    echo "<div id='sign-in'>
+                    echo "<div id='corner-btn'>
                                 <a class='btn btn-outline-light' href='views/pages/sign_in.php'>Sign in</a>
                               </div>";
                 } else {
-                    echo "<div id='sign-out'>
+                    echo "<div id='corner-btn'>
                                 <a class='btn btn-outline-light' href='controllers/sign_out_controller.php'>Sign out</a>
                               </div>";
                 }
@@ -103,7 +103,12 @@
             <div id="footer">
                 <div class="container">
                   <h4>Women Who Can &copy;</h4>
-                  <p>Ts and Cs Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                   <p>Designed and created with <span class="icon">&#x2665;</span> by <a href="https://github.com/annaecc">@annaecc</a>,
+                      <a href="https://github.com/LauraCollard">@lauracollard</a>, <a href="https://github.com/loujean">@loujean</a>,
+                      <a href="https://github.com/alysanne">@alysanne</a> and <a href="https://github.com/StephBrooks88">@stephbrooks88</a>. 
+                      We use cookies to give you a smooth experience. We will never share your details with third parties. 
+                      In order to use Women Who Can, you must agree to our Privacy Policy and our cookie policy.</p>
+                </div>
                 </div>
             </div>
 
