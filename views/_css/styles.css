@@ -1,0 +1,45 @@
+#sign-in, #sign-out {
+    display: flex;
+    width: 100%;
+    background: transparent;
+    justify-content: flex-end;
+    padding: 10px 15px 0 0;
+    color: white;
+}
+
+.header-w-btn img { margin: 10px auto 50px auto !important; }
+
+.home {
+  width: 100% !important;
+}
+
+.full {
+    width: 100%;
+}
+
+.icon {
+    margin: auto;
+}
+
+
+
+@media (max-width:768px) {
+    #nav ul .icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+        position: relative; 
+    }  
+}
+
+
+@media (min-width:1100px) {
+    .postList {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .blogPostsHome {
+        width: 47%;
+    }
+}
