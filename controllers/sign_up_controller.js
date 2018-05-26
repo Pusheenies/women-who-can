@@ -14,7 +14,7 @@ $("#sign-up").submit(function (event) {
             let redirect = function () {
                 window.location = "sign_in.php";
             };
-            setTimeout(redirect, 2000);
+            setTimeout(redirect, 1500);
         } else {
             $("#error-msg").html("Something went wrong, please try again!");
         }

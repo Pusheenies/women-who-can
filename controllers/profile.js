@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $.getJSON("../models/profileModel.php", function (member){
+    $.getJSON("../../models/profileModel.php", function (member){
         $("#profile_image").append("<img src='"+member.profile_image+"' style='max-height:200px;width:auto;display:block;'>");
         $("#forename").append(member.forename);
         $("#surname").append(member.surname);

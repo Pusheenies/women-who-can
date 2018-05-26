@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Women Who Can - Home</title>
+        <title>WHC - Home</title>
         <meta charset="UTF-8">
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -42,11 +42,11 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav full">
-                            <li><a href="#">Profile</a></li>
-                            <li><a class="" href="#">Comedy</a></li>
-                            <li><a class="" href="#">Innovate</a></li>
-                            <li><a class="" href="#">Learn</a></li>
-                            <li><a class="" href="#">Inspire</a></li>
+                            <li><a href="views/pages/profile.php">Profile</a></li>
+                            <li><a href="#">Comedy</a></li>
+                            <li><a href="#">Innovate</a></li>
+                            <li><a href="#">Learn</a></li>
+                            <li><a href="#">Inspire</a></li>
                             <li class="icon"><a href="#">🔎</a></li>
                         </ul>
                     </div>       
@@ -108,12 +108,10 @@
                       We use cookies to give you a smooth experience. We will never share your details with third parties. 
                       In order to use Women Who Can, you must agree to our Privacy Policy and our cookie policy.</p>
                 </div>
-                </div>
             </div>
 
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <!-- Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
