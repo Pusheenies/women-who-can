@@ -16,7 +16,7 @@ $member= new Member($row["member_id"], htmlentities($row["username"]), htmlentit
 //updating details
 if(!empty($_REQUEST["password"])){
     $member->updateDetails($pdo, $_REQUEST, $_SESSION["id"]);
-    header("Location: ../views/profile.html");
+    header("Location: ../views/pages/profile.php");
     return;
 } else {
     echo "Please enter your password to update your details.";
