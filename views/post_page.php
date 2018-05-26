@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
         <!--StyleSheets-->
         <link rel="stylesheet" type="text/css" href="../_css/style.css" />
-        <link rel="stylesheet" type="text/css" href="../_css/post.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/post_page.css" />
         <!--Fonts-->
         <link rel="stylesheet" type="text/css" href="../_css/ss-pika.css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -51,7 +51,27 @@
         <div class="container" id="comments">
             <!--post comments-->
         </div>
+
+        <div class="container" id="leave_comment">
+            <?php
+            $member_id= filter_input(INPUT_COOKIE, 'member_id', FILTER_SANITIZE_STRING);
+            if(!$member_id){
+                echo "<div class='text-center no_comment'>Sign in to add a comment!</div>";
+            } else {
+                echo "<form action='../models/leave_comment.php' method='post'>
+                        <div class='text-center'>
+                        <div class='form-group row'>
+                        <label for='leave_comment'>Leave a comment</label>
+                        <textarea name='leave_comment' class='form-control' id='leave_comment'></textarea>
+                        </div>
+                        <div><input type='submit' value='Leave comment' id='confirm_comment' class='peach'></div>
+                        </div></form>";
+            }
+            ?>
+        </div>      
         
+
+
 
         <div class="clear"></div> <!--needed for the footer to be at the bottom-->
         <!-- FOOTER -->

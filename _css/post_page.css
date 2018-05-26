@@ -19,14 +19,17 @@ h1 {
 .comment {
     margin-bottom: 30px;
 }
-#confirm_comment {
-    border: none;
-    background-color: white;
-    margin-top:5px;
-}
 .user {
     text-decoration: underline;
 }
 .date {
     font-size:12px;
+}
+#confirm_comment {
+    border: none;
+    background-color: white;
+    margin-bottom: 50px;
+}
+.no_comment {
+    margin-bottom: 50px;
 }

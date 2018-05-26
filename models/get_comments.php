@@ -10,6 +10,8 @@ $stmt= $pdo->prepare("SELECT * FROM comments c
                         WHERE post_id=:post_id");
 $stmt->execute(array(":post_id" => $post_id));
 while($row= $stmt->fetch(PDO::FETCH_ASSOC)){
-    $comments[]= $row;
+    if($row["approved"]!=="0"){
+        $comments[]= $row;
+    }
 }
 echo json_encode($comments);
