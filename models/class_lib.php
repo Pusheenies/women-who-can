@@ -137,6 +137,7 @@ class Post {
     protected $title;
     protected $post_image;
     protected $post_content;
+    
     function __construct($post_id, $post_date, $category_id, $member_id, $title, $post_image, $post_content) {
         $this->post_id = $post_id;
         $this->post_date = $post_date;
@@ -166,6 +167,40 @@ class Post {
     }
     function getPost_content() {
         return $this->post_content;
+    }
+}
+
+class Posts_List {
+    private $posts;
+    
+    function __construct() {
+        $this->posts = [];
+    }
+    
+    function generate_posts_list($pdo) {
+        $sql = "SELECT p.post_id, p.post_date, p.category_id, p.member_id, pr.forename, p.title, p.post_image, p.post_content
+                FROM posts p
+                JOIN profiles pr ON pr.member_id = p.member_id
+                ORDER BY post_date DESC;";
+        $statement = $pdo->prepare($sql);
+        $statement->execute();
+        $statement->setFetchMode(PDO::FETCH_ASSOC);
+        
+        while ($post_data = $statement->fetch()) {
+            $post_data['title'] = htmlentities($post_data['title'], ENT_SUBSTITUTE, FALSE);
+            $post_data['post_content'] = htmlentities($post_data['post_content'], ENT_SUBSTITUTE);
+            $post_data['post_date'] = date_format(date_create($post_data['post_date']),"d/m/Y");
+            $this->append($post_data);
+        }
+        $this->posts = json_encode($this->posts);
+    }
+    
+    private function append($post) {
+        $this->posts[] = $post;
+    }
+    
+    function get_posts() {
+        return $this->posts;
     }
 }
 

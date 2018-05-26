@@ -6,11 +6,11 @@
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <!--StyleSheets-->
-        <link rel="stylesheet" type="text/css" href="views/_css/style.css" />
+        <link rel="stylesheet" type="text/css" href="views/_css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="views/_css/styles.css"/>
         <!--Fonts-->
-        <link rel="stylesheet" type="text/css" href="views/_css/ss-pika.css" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        <link href="views/_css/styles.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="views/_css/ss-pika.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/> 
     </head>
     <body>
         <div id="container">
@@ -49,8 +49,7 @@
                             <li><a class="" href="#">Inspire</a></li>
                             <li class="icon"><a href="#">🔎</a></li>
                         </ul>
-                    </div>
-                    
+                    </div>       
                 </div>
             </div>
 
@@ -66,21 +65,21 @@
                             </div>
                         </li>
                         <li class="blogPostsHome">
-                            <a href="#"><div class="blogpic left" style="background-image: url(_img/women-leaders-powerful.jpg);"></div></a>
+                            <a href="#"><div class="blogpic left" style="background-image: url(views/_img/women-leaders-powerful.jpg);"></div></a>
                             <div class="right">
                                 <a href="#"><h1>Blog Item Title</h1></a>
                                 <h6>By <a href="#" class="peach">Amy Wu</a> - Posted on 18 Apr 18</h6>
                             </div>
                         </li>
                         <li class="blogPostsHome">
-                            <a href="#"><div class="blogpic left" style="background-image: url(_img/desk.jpg);"></div></a>
+                            <a href="#"><div class="blogpic left" style="background-image: url(views/_img/desk.jpg);"></div></a>
                             <div class="right">
                                 <a href="#"><h1>Blog Item Title</h1></a>
                                 <h6>By <a href="#" class="peach">Amy Wu</a> - Posted on 18 Apr 18</h6>
                             </div>
                         </li>
                         <li class="blogPostsHome">
-                            <a href="#"><div class="blogpic left" style="background-image: url(_img/women-prints.jpg);"></div></a>
+                            <a href="#"><div class="blogpic left" style="background-image: url(views/_img/women-prints.jpg);"></div></a>
                             <div class="right">
                                 <a href="#"><h1>Blog Item Title</h1></a>
                                 <h6>By <a href="#" class="peach">Amy Wu</a> - Posted on 18 Apr 18</h6>
@@ -93,8 +92,8 @@
             <div id="nextlink">
               <div class="container">
                 <!-- COMMENT OUT IF NEEDED -->
-                <a href="#" class="left">&larr; Newer Posts</a>
-                <a href="#" class="right">Older Posts &rarr;</a>
+<!--                <a href="#" class="left">&larr; Newer Posts</a>
+                <a href="#" class="right">Older Posts &rarr;</a>-->
               </div>
               <div class="clear"></div>
             </div>
@@ -115,13 +114,10 @@
         </div>
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script>
-            var myDiv = $('.review');
-            myDiv.text(myDiv.text().substring(0,150));
-        </script>
         <!-- Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <script src="controllers/home_controller.js" type="text/javascript"></script>
       </body>
 </html>
