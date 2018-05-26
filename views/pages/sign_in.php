@@ -30,7 +30,7 @@
             </div>
           
             <div class="container mb-5">
-                <h1>Welcome back</h1>
+                <h1 class="title">Welcome back</h1>
                 <h2>Sign in to access more of the amazing features of our site</h2>
                 
                 <div class="container">

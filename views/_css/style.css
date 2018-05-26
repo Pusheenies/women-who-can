@@ -57,7 +57,7 @@ h6 a, #about a { font-weight: bold; }
 /* TOP */
 
 #header {
-  background-image: url(/women-who-can/views/_img/o-BLACK-BUSINESS-WOMAN-DESK-facebook.jpg);
+  background-image: url(../_img/o-BLACK-BUSINESS-WOMAN-DESK-facebook.jpg);
   background-size: cover;
   background-position: center;
   text-align: center;
