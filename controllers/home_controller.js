@@ -10,12 +10,12 @@ $(document).ready(function() {
             }
             return title;
         }
-
+        
         let postsList = JSON.parse(response);
         
         for (let post of postsList) {
             let url = post['post_image'];
-            let title = crop_title(post['title']);
+            let title = unescape(crop_title(post['title']));
             let author = post['forename'];
             let post_date = post['post_date'];
             
@@ -29,6 +29,7 @@ $(document).ready(function() {
             
             $(".postList").append(postHTML);
         }
-        console.log(postsList);
+//        console.log(response);
+//        console.log(postsList);
     });
 });

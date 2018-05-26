@@ -187,10 +187,9 @@ class Posts_List {
         $statement->setFetchMode(PDO::FETCH_ASSOC);
         
         while ($post_data = $statement->fetch()) {
-            $post_data['title'] = htmlentities($post_data['title'], ENT_SUBSTITUTE);
+            $post_data['title'] = htmlentities($post_data['title'], ENT_SUBSTITUTE, FALSE);
             $post_data['post_content'] = htmlentities($post_data['post_content'], ENT_SUBSTITUTE);
             $post_data['post_date'] = date_format(date_create($post_data['post_date']),"d/m/Y");
-//            $json_post = json_encode($post_data);
             $this->append($post_data);
         }
         $this->posts = json_encode($this->posts);
