@@ -29,7 +29,5 @@ $(document).ready(function() {
             
             $(".postList").append(postHTML);
         }
-//        console.log(response);
-//        console.log(postsList);
     });
 });
