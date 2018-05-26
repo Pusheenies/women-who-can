@@ -6,10 +6,10 @@
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <!--StyleSheets-->
-        <link rel="stylesheet" type="text/css" href="/women-who-can/views/_css/style.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/style.css" />
         <link href="../_css/styles.css" rel="stylesheet" type="text/css"/>
         <!--Fonts-->
-        <link rel="stylesheet" type="text/css" href="/women-who-can/views/_css/ss-pika.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/ss-pika.css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <!-- Redirect to Home page if user is signed in -->
         <?php
@@ -24,9 +24,9 @@
         <div id="container">
             <div id="header" class="header-w-btn">
                 <div id='corner-btn'>
-                    <a class='btn btn-outline-light' href='/women-who-can/index.php'>Home</a>
+                    <a class='btn btn-outline-light' href='../../index.php'>Home</a>
                 </div>
-                <a href="/women-who-can/index.php"><img src="/women-who-can/views/_img/logo/LogoWhite.png"></a>
+                <a href="../../index.php"><img src="../_img/logo/LogoWhite.png"></a>
             </div>
           
             <div class="container mb-5">
@@ -68,7 +68,7 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script>
             var myDiv = $('.review');
-            myDiv.text(myDiv.text().substring(0,150))
+            myDiv.text(myDiv.text().substring(0,150));
         </script>
         <!-- Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
