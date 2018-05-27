@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Women Who Can - Sign in</title>
+        <title>WHC - Sign in</title>
         <meta charset="UTF-8">
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -47,9 +47,9 @@
                         </div>
                         <input type="submit" value="SIGN IN" class="peach btn-block button"/>
                     </form>
-                    <div id="error-msg" class="mt-4"><!-- Error message for unsuccessful sign in --></div>
+                    <div id="error-msg" class="text-center m-4"><!-- Error message for unsuccessful sign in --></div>
                     
-                    <div class="text-center">Not a member? <a href="sign_up.php">Sign up</a> to access your personal profile</div>
+                    <div class="text-center">Not a member? <a class="peach" href="sign_up.php">Sign up</a> to access your personal profile</div>
                 </div>
             </div>
             
@@ -65,11 +65,6 @@
                 </div>
             </div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script>
-            var myDiv = $('.review');
-            myDiv.text(myDiv.text().substring(0,150));
-        </script>
         <!-- Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
