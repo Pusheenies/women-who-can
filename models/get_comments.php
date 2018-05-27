@@ -4,7 +4,7 @@ include "class_lib.php";
 include "../connection.php";
 $pdo = DB::getInstance();
 
-$post_id= 2;
+$post_id= $_SESSION["post_id"];
 
 $stmt= $pdo->prepare("SELECT * FROM comments c
                         JOIN members m ON c.member_id=m.member_id

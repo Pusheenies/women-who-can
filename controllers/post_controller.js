@@ -38,6 +38,7 @@ $(document).ready(function (){
     });
 
     $.post("../models/follow_btn.php", function(response){
+        console.log(response);
         $.getJSON("../models/post_model.php", function(post){
             var author_id= post.member_id;
             var url= "../models/follow_unfollow.php?author="+author_id;

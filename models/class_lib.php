@@ -200,10 +200,6 @@ class Posts_List {
         return $this->posts;
     }
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> post_page
 class Member_Sign_In {
     private $username;
     private $text_password;
