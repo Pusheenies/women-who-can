@@ -19,9 +19,9 @@ if (isset($_POST['submit'])) {
             if ($fileSize < 1000000) {
                 // prevent existing uploaded files being overwritten by giving them a unique name made up of the file
                 $fileNameNew = uniqid('', true) . "." . $fileActualExt;
-                $fileDestination = 'uploads/' . $fileNameNew;
+                $fileDestination = '../uploads/' . $fileNameNew;
                 move_uploaded_file($fileTmpName, $fileDestination);
-                $image_path = $fileDestination;
+                $image_path = 'uploads/' . $fileNameNew;
 //				print_r($image_path);
                 $stmt = $pdo->prepare("UPDATE profiles 
                                        SET profile_image=:profile_image

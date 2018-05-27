@@ -49,7 +49,7 @@
                     </form>
                     <div id="error-msg" class="text-center m-4"><!-- Error message for unsuccessful sign in --></div>
                     
-                    <div class="text-center">Not a member? <a href="sign_up.php">Sign up</a> to access your personal profile</div>
+                    <div class="text-center">Not a member? <a class="peach" href="sign_up.php">Sign up</a> to access your personal profile</div>
                 </div>
             </div>
             
