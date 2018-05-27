@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>WHC - Home</title>
+        <title>WWC - Home</title>
         <meta charset="UTF-8">
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -47,6 +47,12 @@
                             <li><a href="#">Innovate</a></li>
                             <li><a href="#">Learn</a></li>
                             <li><a href="#">Inspire</a></li>
+                            <?php
+                            $security = filter_input(INPUT_COOKIE, 'security', FILTER_SANITIZE_STRING);
+                            if ($security === 'writer') {
+                                echo "<li><a href='views/pages/write_post.php'>Write</a></li>";
+                            }
+                            ?>
                             <li class="icon"><a href="#">🔎</a></li>
                         </ul>
                     </div>       

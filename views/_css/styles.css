@@ -37,6 +37,16 @@
     border-top-left-radius: 0;
 }
 
+/* Post form */
+.post-form {
+    margin: 30px auto;
+    width: 100%;
+}
+
+textarea { resize: none; }
+
+.custom-file label { color: #6c757c; }
+
 .button {
     border: none;
     background-color: transparent;

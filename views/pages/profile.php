@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>WHC - Profile</title>
+        <title>WWC - Profile</title>
         <meta charset="UTF-8">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -35,18 +35,24 @@
             <div id="nav" class="navbar navbar-expand-md navbar-light">
                 <div class="container">
                     <ul>
-                        <li><a class="peach" href="../../index.php">Home</a></li>
+                        <li><a href="../../index.php">Home</a></li>
                     </ul>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav full">
-                            <li><a href="#">Profile</a></li>
+                            <li><a class="peach" href="#">Profile</a></li>
                             <li><a href="#">Comedy</a></li>
                             <li><a href="#">Innovate</a></li>
                             <li><a href="#">Learn</a></li>
                             <li><a href="#">Inspire</a></li>
+                            <?php
+                            $security = filter_input(INPUT_COOKIE, 'security', FILTER_SANITIZE_STRING);
+                            if ($security === 'writer') {
+                                echo "<li><a href='write_post.php'>Write</a></li>";
+                            }
+                            ?>
                             <li class="icon"><a href="#">🔎</a></li>
                         </ul>
                     </div>       

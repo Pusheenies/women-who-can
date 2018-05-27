@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>WHC - Sign in</title>
+        <title>WWC - Sign in</title>
         <meta charset="UTF-8">
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <!--StyleSheets-->
         <link rel="stylesheet" type="text/css" href="../_css/style.css" />
-        <link href="../_css/styles.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="../_css/styles.css" />
         <!--Fonts-->
         <link rel="stylesheet" type="text/css" href="../_css/ss-pika.css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
