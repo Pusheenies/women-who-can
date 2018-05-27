@@ -1,6 +1,4 @@
 <?php
-
-
 class Member {
     protected $member_id;
     protected $username;
@@ -169,7 +167,6 @@ class Post {
         return $this->post_content;
     }
 }
-
 class Posts_List {
     private $posts;
     
@@ -203,7 +200,10 @@ class Posts_List {
         return $this->posts;
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> post_page
 class Member_Sign_In {
     private $username;
     private $text_password;
