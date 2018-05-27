@@ -1,6 +1,7 @@
 <?php
 session_start();
-include "../pdo.php";
+include "../connection.php";
+$pdo = DB::getInstance();
 
 if (isset($_POST['submit'])){
 	$file = $_FILES['file'];

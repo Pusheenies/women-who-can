@@ -1,9 +1,10 @@
 <?php
 session_start();
-include "../pdo.php";
 include "class_lib.php";
+include "../connection.php";
+$pdo = DB::getInstance();
 
-$post_id= 2;
+$post_id= $_SESSION["post_id"];
 
 //fetching post details
 $stmt= $pdo->prepare("SELECT * FROM posts p

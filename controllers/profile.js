@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $.getJSON("../models/profileModel.php", function (member){
+        console.log(member);
         $("#profile_image").append("<img src='"+member.profile_image+"' style='max-height:200px;width:auto;display:block;'>");
         $("#forename").append(member.forename);
         $("#surname").append(member.surname);
@@ -21,7 +22,11 @@ $(document).ready(function(){
                 $("#own_posts_list").append("<li>"
                                         +"<div class='blogpic left' style='background-image: "+member.own_posts[i][4]+";'></div>"
                                         +"<div class='right'>"
-                                        +"<h1>"+member.own_posts[i][0]+"</h1>"
+                                        +"<h1>"
+                                        +"<a href='../views/post_page.php?post="+member.own_posts[i][1]+"'>"
+                                        +member.own_posts[i][0]
+                                        +"</a>"
+                                        +"</h1>"
                                         +"<p style='font-size:15px;'>Posted "+member.own_posts[i][2]+$days+"</p>"
                                         +"<p style='margin-top:70px;'><a href='#' class='peach'>Edit/delete post</a></p>"
                                         +"</div>"
@@ -45,7 +50,11 @@ $(document).ready(function(){
                 $("#favourites_list").append("<li>"
                                             +"<div class='blogpic left' style='background-image: "+member.favourites[i][4]+";'></div>"
                                             +"<div class='right'>"
-                                            +"<h1>"+member.favourites[i][0]+"</h1>"
+                                            +"<h1>"
+                                            +"<a href='../views/post_page.php?post="+member.favourites[i][1]+"'>"
+                                            +member.favourites[i][0]
+                                            +"</a>"
+                                            +"</h1>"
                                             +"<p style='font-size:15px;'>Posted "+member.favourites[i][2]+$days+"</p>"
                                             +"<p style='margin-top:70px;'><a href='#' class='peach'>Remove from favourites</a></p>"
                                             +"</div>"

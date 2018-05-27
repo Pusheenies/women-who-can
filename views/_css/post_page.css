@@ -1,13 +1,18 @@
-a {
-    margin-right: 5px;
-}
 p {
     font-size: 16px;
 }
 h1 {
     text-align: center;
 }
-#post_username_date {
+#post_username p {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+#post_username_div {
+    text-align: center;
+}
+#post_category_date {
     text-align: center;
 }
 #hashtags {
@@ -15,6 +20,7 @@ h1 {
 }
 #hashtags a {
     padding: 2px 4px 2px 4px;
+    margin-right: 5px;
 }
 .comment {
     margin-bottom: 30px;

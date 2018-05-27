@@ -1,9 +1,10 @@
 <?php
 session_start();
-include "../pdo.php";
 include "class_lib.php";
+include "../connection.php";
+$pdo = DB::getInstance();
 
-$_SESSION["id"]= 15;
+$_SESSION["id"]= filter_input(INPUT_COOKIE, 'member_id', FILTER_SANITIZE_STRING);
 
 //fetching member details
 $stmt= $pdo->prepare("SELECT * FROM members m

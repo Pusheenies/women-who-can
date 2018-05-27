@@ -1,7 +1,8 @@
 <?php
 session_start();
-include "../pdo.php";
 include "class_lib.php";
+include "../connection.php";
+$pdo = DB::getInstance();
 
 $post_id= 2;
 

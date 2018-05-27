@@ -1,3 +1,8 @@
+<?php
+session_start();
+$_SESSION["post_id"]= $_REQUEST["post"];
+?>
+
 <html>
     <head>
         <title>Post</title>
@@ -6,16 +11,16 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
         <!--StyleSheets-->
-        <link rel="stylesheet" type="text/css" href="../_css/style.css" />
-        <link rel="stylesheet" type="text/css" href="../_css/post_page.css" />
+        <link rel="stylesheet" type="text/css" href="_css/style.css" />
+        <link rel="stylesheet" type="text/css" href="_css/post_page.css" />
         <!--Fonts-->
-        <link rel="stylesheet" type="text/css" href="../_css/ss-pika.css" />
+        <link rel="stylesheet" type="text/css" href="_css/ss-pika.css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     </head>
     <body>
 
         <div id="header">
-            <a href="#"><img src="../_img/logo/LogoWhite.png"></a>
+            <a href="#"><img src="_img/logo/LogoWhite.png"></a>
         </div>
 
         <!-- NAV -->
@@ -36,8 +41,20 @@
             <!--post title-->
         </div>
 
-        <div class="container" id="post_username_date">
-            <!--post date and username-->
+        <div class="container" id="post_username_div">
+            <span id="post_username"><!--post author's username--></span>
+            <?php
+            $member_id= filter_input(INPUT_COOKIE, 'member_id', FILTER_SANITIZE_STRING);
+            if(!$member_id){
+                echo "<p><a href='pages/sign_in.php' class='peach'>To follow/unfollow, please sign in!</a></p>";
+            } else {
+                echo "<p><span id='follow_btn'></span></p>";
+            }
+            ?>
+        </div>
+
+        <div class="container" id="post_category_date">
+            <!--post category and date-->
         </div>
 
         <div class="container" id="post_content">
@@ -54,9 +71,8 @@
 
         <div class="container" id="leave_comment">
             <?php
-            $member_id= filter_input(INPUT_COOKIE, 'member_id', FILTER_SANITIZE_STRING);
             if(!$member_id){
-                echo "<div class='text-center no_comment'>Sign in to add a comment!</div>";
+                echo "<div class='text-center no_comment'><a href='pages/sign_in.php' class='peach'>To comment, please sign in!</a></div>";
             } else {
                 echo "<form action='../models/leave_comment.php' method='post'>
                         <div class='text-center'>
@@ -64,15 +80,14 @@
                         <label for='leave_comment'>Leave a comment</label>
                         <textarea name='leave_comment' class='form-control' id='leave_comment'></textarea>
                         </div>
+                        <input type='hidden' name='member_id' value='".$member_id."'>
+                        
                         <div><input type='submit' value='Leave comment' id='confirm_comment' class='peach'></div>
                         </div></form>";
             }
             ?>
         </div>      
         
-
-
-
         <div class="clear"></div> <!--needed for the footer to be at the bottom-->
         <!-- FOOTER -->
         <div id="footer">
