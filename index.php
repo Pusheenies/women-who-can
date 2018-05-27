@@ -29,7 +29,7 @@
                               </div>";
                 }
                 ?>
-                <a href="#"><img src="/women-who-can/views/_img/logo/LogoWhite.png"></a>
+                <a href="#"><img src="views/_img/logo/LogoWhite.png"></a>
             </div>
             <!-- NAV -->
             <div id="nav" class="navbar navbar-expand-md navbar-light">
@@ -58,7 +58,7 @@
                 <div id="blogPosts" class="home">
                     <ul class="postList">
                         <li class="blogPostsHome">
-                            <a href="#"><div class="blogpic left" style="background-image: url(/women-who-can/views/_img/Women-who-can-Ruqsana-Begum-01.jpg);"></div></a>
+                            <a href="#"><div class="blogpic left" style="background-image: url(views/_img/Women-who-can-Ruqsana-Begum-01.jpg);"></div></a>
                             <div class="right">
                                 <a href="#"><h1>Meet Ruqsana Begum</h1></a>
                                 <h6>By <a href="#" class="peach">Amy Wu</a> - Posted on 18 Apr 18</h6>
