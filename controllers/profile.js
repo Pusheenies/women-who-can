@@ -55,8 +55,9 @@ $(document).ready(function(){
                                             +member.favourites[i][0]
                                             +"</a>"
                                             +"</h1>"
-                                            +"<p style='font-size:15px;'>Posted "+member.favourites[i][2]+$days+"</p>"
-                                            +"<p style='margin-top:70px;'><a href='#' class='peach'>Remove from favourites</a></p>"
+                                            +"<p style='font-size:20px;'>"+member.favourites[i][5]+"</p>"
+                                            +"<p style='font-size:15px;'>"+member.favourites[i][2]+$days+"</p>"
+                                            +"<p style='margin-top:50px;'><a href='#' class='peach'>Remove from favourites</a></p>"
                                             +"</div>"
                                             +"</li>");
             }
