@@ -12,6 +12,17 @@ if ($request_method === 'POST') {
     $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
     $file = filter_input(INPUT_POST, 'file', FILTER_SANITIZE_STRING);
     
+    if (!$file) {
+        // Insert Blog Post
+        $post = new Post('', '', $category, $member_id, $title, '', $content);
+        $post->new_post($pdo);
+    } else {
+        // Insert Blog Post - w/temp file placeholder
+        $file_placeholder = uniqid('', true);
+        $post = new Post('', '', $category, $member_id, $title, $file_placeholder, $content);
+        $post->new_post($pdo);
+    }
+    
     // File upload
     if ($file_uploaded) {
         $file = $_FILES['post-image'];  
@@ -46,6 +57,8 @@ if ($request_method === 'POST') {
             echo "Incorrect file type";
     //        echo "Sorry, you cannot upload files of this type! Please make sure the extension is jpg, jpeg or png.";
         }
-    echo "Image uploaded";
+    } else {
+        $image_path = '';
     }
+    echo "Post uploaded";
 }

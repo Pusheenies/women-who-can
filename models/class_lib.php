@@ -147,6 +147,19 @@ class Post {
         $this->post_image = $post_image;
         $this->post_content = $post_content;
     }
+    
+    function new_post($pdo) {
+        $sql = "INSERT INTO posts (category_id, member_id, title, post_content)
+                VALUES (:category_id, :member_id, :title, :post_content);";
+        $statement = $pdo->prepare($sql);
+        $statement->execute([
+            'category_id' => $this->category_id,
+            'member_id' => $this->member_id,
+            'title' => $this->title,
+            'post_content' => $this->post_content
+        ]);
+    }
+    
     function getPost_id() {
         return $this->post_id;
     }

@@ -61,7 +61,7 @@
                 <h2>New Post</h2>
                 
                 <div class="container mt-2">
-                    <form id="post_form" method="post" class="post-form mb-3">
+                    <form id="post_form" method="post" class="post-form mb-3" enctype="multipart/form-data" name="post_form">
                         <div class="form-group">
                             <label class="sr-only" for="title">Title</label>
                             <input type="text" name="title" id="title" class="form-control" placeholder="Title" required autofocus/>

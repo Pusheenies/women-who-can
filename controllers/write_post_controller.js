@@ -8,24 +8,31 @@ $("#post-image").change(function () {
 
 $("#post_form").submit(function (event) {
     event.preventDefault();
-    var data = new FormData($("#post_form")[0]);
-    let content = $("#content").val();
-    data.append("content", content);
     
+    let form_fields = $("#post_form").serialize();
+    let content = $("#content").val();
+    let file = $("#post-image").val();
+    form_fields += ('&content=' + content);
+    form_fields += ('&file=' + file);
+
+    $.post("../../models/write_post_model.php", form_fields).done(function (response) {
+        console.log(response);
+    });
+    
+    let form_data = new FormData($("#post_form")[0]);
+
     $.ajax({
         type: "POST",
         enctype: 'multipart/form-data',
         url: "../../models/write_post_model.php",
-        data: data,
+        data: form_data,
         processData: false,
         contentType: false,
-        cache: false,
-        timeout: 600000,
         success: function (response) {
             console.log(response);
-//            $("#result").text(response);
-//            console.log("SUCCESS : ", response);
-//            $("#btnSubmit").prop("disabled", false);
+////            $("#result").text(response);
+////            console.log("SUCCESS : ", response);
+////            $("#btnSubmit").prop("disabled", false);
         },
         error: function (error) {
 //            $("#result").text(error.responseText);
@@ -33,17 +40,4 @@ $("#post_form").submit(function (event) {
 //            $("#btnSubmit").prop("disabled", false);
         }
     });
-//    $.post("../../models/write_post_model.php", data).done(function (response) {
-//        console.log(response);
-//        if (response === "Sign in successful") {
-//            $("#error-msg").html("Signed in!");
-//            let reloadPage = function () {
-//                location.reload();
-//            };
-//            setTimeout(reloadPage, 1500);
-//            
-//        } else {
-//            $("#error-msg").html("Your username or password are incorrect, please try again.");
-//        }
-//    });
 });
