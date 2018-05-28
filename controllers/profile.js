@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $.getJSON("../../models/profileModel.php", function (member){
+        console.log(member);
         $("#profile_image").append("<img src='../../"+member.profile_image+"' style='max-height:200px;width:auto;display:block;'>");
         $("#forename").append(member.forename);
         $("#surname").append(member.surname);
@@ -19,7 +20,7 @@ $(document).ready(function(){
                     $days= " day ago";
                 }
                 $("#own_posts_list").append("<li>"
-                                        +"<div class='blogpic left' style='background-image: "+member.own_posts[i][4]+";'></div>"
+                                        +"<div class='blogpic left' style='background-image: url("+member.own_posts[i][4]+");'></div>"
                                         +"<div class='right'>"
                                         +"<h1>"
                                         +"<a href='../../views/post_page.php?post="+member.own_posts[i][1]+"'>"
@@ -47,7 +48,7 @@ $(document).ready(function(){
                     $days= " day ago";
                 }
                 $("#favourites_list").append("<li>"
-                                            +"<div class='blogpic left' style='background-image: "+member.favourites[i][4]+";'></div>"
+                                            +"<div class='blogpic left' style='background-image: url("+member.favourites[i][4]+");'></div>"
                                             +"<div class='right'>"
                                             +"<h1>"
                                             +"<a href='../../views/post_page.php?post="+member.favourites[i][1]+"'>"
