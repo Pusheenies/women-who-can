@@ -95,7 +95,7 @@
                             <label class="sr-only" for="hashtags">Hashtags</label>
                             <input type="text" name="hashtags" id="hashtags" class="form-control" placeholder="#inspiration #creativity #learn" required />
                         </div>
-                        <input type="submit" value="SUBMIT" class="peach btn-block button"/>
+                        <input type="submit" value="SUBMIT" id="submit-btn" class="peach btn-block button"/>
                     </form>
                     <div id="error-msg" class="text-center m-4"><!-- Error message for unsuccessful sign in --></div>
                 </div>
