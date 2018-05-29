@@ -7,7 +7,7 @@ $("#post-image").change(function () {
 });
 
 $("#hashtags").change(function () {
-    let hashtags = $("#hashtags").val().split(" ");
+    let hashtags = $("#hashtags").val().trim().split(" ");
     
     for (let i = 0; i < hashtags.length; i++) {
         if (hashtags[i].charAt(0) !== '#') {

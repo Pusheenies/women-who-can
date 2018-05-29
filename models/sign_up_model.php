@@ -1,5 +1,5 @@
 <?php
-include ("../connection.php");
+include "../connection.php";
 
 $pdo = DB::getInstance();
 $request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD', FILTER_SANITIZE_STRING);
@@ -32,8 +32,7 @@ if ($request_method === 'POST') {
               $query = $pdo->prepare($mysql);
               $query->execute();
 
-              header("Location: ../views/pages/sign_in.php");
-              return;
+              echo "Sign up successful";
             }  
         }
     }
