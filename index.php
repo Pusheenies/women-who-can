@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>WHC - Home</title>
+        <title>WWC - Home</title>
         <meta charset="UTF-8">
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -43,7 +43,7 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav full">
                             <li><a href="views/pages/profile.php">Profile</a></li>
-                            <li><a href="views/pages/nav_search_results.php?cat=1">Comedy</a></li>
+                            <li><a href="views/pages/nav_search_results.php?cat=1">Laugh</a></li>
                             <li><a href="views/pages/nav_search_results.php?cat=2">Innovate</a></li>
                             <li><a href="views/pages/nav_search_results.php?cat=3">Learn</a></li>
                             <li><a href="views/pages/nav_search_results.php?cat=4">Inspire</a></li>

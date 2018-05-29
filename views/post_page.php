@@ -5,7 +5,7 @@ $_SESSION["post_id"]= $_REQUEST["post"];
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Post</title>
+        <title>WWC</title>
         <meta charset="UTF-8">  
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -39,7 +39,7 @@ $_SESSION["post_id"]= $_REQUEST["post"];
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav full">
                             <li><a href="pages/profile.php">Profile</a></li>
-                            <li><a href="pages/nav_search_results.php?cat=1">Comedy</a></li>
+                            <li><a href="pages/nav_search_results.php?cat=1">Laugh</a></li>
                             <li><a href="pages/nav_search_results.php?cat=2">Innovate</a></li>
                             <li><a href="pages/nav_search_results.php?cat=3">Learn</a></li>
                             <li><a href="pages/nav_search_results.php?cat=4">Inspire</a></li>
@@ -58,7 +58,7 @@ $_SESSION["post_id"]= $_REQUEST["post"];
             <?php
             $member_id= filter_input(INPUT_COOKIE, 'member_id', FILTER_SANITIZE_STRING);
             if(!$member_id){
-                echo "<p><a href='pages/sign_in.php' class='peach'>To follow/unfollow, please sign in!</a></p>";
+                echo "<p><a href='pages/sign_in.php' class='peach'>To follow/unfollow this member, please sign in!</a></p>";
             } else {
                 echo "<p><span id='follow_btn'></span></p>";
             }
@@ -67,6 +67,21 @@ $_SESSION["post_id"]= $_REQUEST["post"];
 
         <div class="container" id="post_category_date">
             <!--post category and date-->
+        </div>
+
+        <div class="container" id="add_fav">
+        <?php
+        $member_id= filter_input(INPUT_COOKIE, 'member_id', FILTER_SANITIZE_STRING);
+        if(!$member_id){
+            echo "<p><a href='pages/sign_in.php' class='peach'>To add this post to your favourites, please sign in!</a></p>";
+        } else {
+            echo "<p><span id='favourites_btn'></span></p>";
+        }
+        ?>
+        </div>
+
+        <div class="container" id="post_image">
+        <!--post image-->
         </div>
 
         <div class="container" id="post_content">

@@ -3,7 +3,11 @@ $(document).ready(function (){
 
     $.getJSON("../models/post_model.php", function(post){
         $("#post_title").append("<h1>"+post.title+"</h1>");
-        $("#post_username").append("<p>"+post.username+"</p>");
+        $("#post_username").append("<p>By "+post.username+"</p>");
+        var img_url= "../" + post.post_image;
+        $("#post_image").append("<div class='text-center'>"
+                                +"<img src='"+img_url+"' alt='post image' style='height:600px;width:auto;margin-bottom:30px;'>"
+                                +"</div>");
 
         var date= new Date(post.post_date);
         var month= months[date.getMonth()];
@@ -49,5 +53,17 @@ $(document).ready(function (){
                 $("#follow_btn").append("<a href='"+url+"' class='peach'>Follow</a>");
             }
         });
-    });  
+    });
+    
+    $.post("../models/favourites_btn.php", function(response){
+        $.getJSON("../models/post_model.php", function(post){
+            var post_id= post.post_id;
+            var url= "../models/add_remove_favourites.php?post="+post_id;
+            if(response==="already favourite"){
+                $("#favourites_btn").append("<a href='"+url+"' class='peach'>Remove from favourite posts</a>");
+            } else {
+                $("#favourites_btn").append("<a href='"+url+"' class='peach'>Add to favourite posts</a>");
+            }
+        });
+    });
 });

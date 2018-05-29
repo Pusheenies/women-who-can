@@ -18,12 +18,13 @@ $(document).ready(function() {
             let title = unescape(crop_title(post['title']));
             let author = post['forename'];
             let post_date = post['post_date'];
-            
+            let post_id = post['post_id'];
+
             let postHTML = `<li class="blogPostsHome">
                             <a href="#"><div class="blogpic left" style="background-image: url(${url});"></div></a>
                             <div class="right">
-                                <a href="#"><h1 class="blog_title">${title}</h1></a>
-                                <h6>By <a href="#" class="peach">${author}</a> - Posted on ${post_date}</h6>
+                                <a href="views/post_page.php?post=${post_id}"><h1 class="blog_title">${title}</h1></a>
+                                <h6>By <span class="peach">${author}</span> - Posted on ${post_date}</h6>
                             </div>
                         </li>`;
             
