@@ -11,11 +11,13 @@ if ($request_method === 'POST') {
     $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
     $category = filter_input(INPUT_POST, 'category', FILTER_SANITIZE_STRING);
     $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
-    $file_uploaded = isset($_FILES['post-file']['name']) && $_FILES['post-file']['name'] !== '';
+    $hashtags = filter_input(INPUT_POST, 'hashtags', FILTER_SANITIZE_STRING);
+    $file_uploaded = isset($_FILES['post-image']['name']) && $_FILES['post-image']['name'] !== '';
 
     $_SESSION['title'] = $title;
     $_SESSION['category'] = $category;
     $_SESSION['content'] = $content;
+    $_SESSION['hashtags'] = $hashtags;
 
     // File upload
     if ($file_uploaded) {
@@ -35,35 +37,41 @@ if ($request_method === 'POST') {
 
                     // prevent existing uploaded files being overwritten by giving them a unique name made up of the file
                     $uid = uniqid('', true);
-                    $file_new_name = $uid . "." . $file_actual_ext;
+                    $file_new_name = uniqid('', true) . "." . $file_actual_ext;
                     $file_destination = '../uploads/' . $file_new_name;
                     move_uploaded_file($tmp_name, $file_destination);
                     $image_path = 'uploads/' . $file_new_name;
                 } else {
                   // POST request with file size error and form data
-                  header("Location:write_post.php?e=size");
-                    echo "File size error";
+                  header("Location:../views/pages/write_post.php?e=size");
+                  exit();
+//                    echo "File size error";
     //                echo "Oops file size is to big! Please make sure it is less than 1MB.";
                 }
             } else {
               // POST request with upload error and form data
-              header("Location:write_post.php?e=upload");
-                echo "Upload error";
+              header("Location:../views/pages/write_post.php?e=upload");
+              exit();
+//                echo "Upload error";
     //            echo "There was an error uploading your file!";
             }
         } else {
           // POST request with file type error and form data
-          header("Location:write_post.php?e=type");
-            echo "Incorrect file type";
+          header("Location:../views/pages/write_post.php?e=type");
+          exit();
+//            echo "Incorrect file type";
     //        echo "Sorry, you cannot upload files of this type! Please make sure the extension is jpg, jpeg or png.";
         }
     } else {
-      $image_path = ''
+      $image_path = '';
     }
 
-    $post = new Post('', '', $category, $member_id, $title, $file_path, $content);
+    $post = new Post('', '', $category, $member_id, $title, $image_path, $content);
     $post->new_post($pdo);
+    $id = $pdo->lastInsertId();
+    $post->add_hashtags($pdo, $hashtags, $id);
 
-    // Remove session data and end session;
-    header("Location:profile.php");
+    session_unset();
+    session_destroy();
+    header("Location:../views/pages/profile.php");
 }

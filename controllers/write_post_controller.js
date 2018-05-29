@@ -6,51 +6,32 @@ $("#post-image").change(function () {
     $("#img-label").html(img);
 });
 
-// $("#post_form").submit(function (event) {
-//     event.preventDefault();
-//
-//     let form_data = new FormData($("#post_form")[0]);
-//
-//     $.ajax({
-//         type: "POST",
-//         enctype: 'multipart/form-data',
-//         url: "../../models/write_post_model.php",
-//         data: form_data,
-//         processData: false,
-//         contentType: false,
-//         success: function (response) {
-//             console.log(response);
-//             if (response === "File size error") {
-//               $("#error-msg").html("The file is too big, please try again with a smaller file");
-//             } else if (response === "Upload error") {
-//               $("#error-msg").html("Something went wrong, please try again");
-//             } else if (response === "Incorrect file type") {
-//               $("#error-msg").html("File types allowed are jpg, jpeg and png");
-//             } else if (response === "Image uploaded") {
-//               $("#error-msg").html("Posted!");
-//               window.location = "profile.php";
-//             } else {
-//               $("#error-msg").html("Something went wrong, please try again");
-//             }
-//         },
-//         error: function (error) {
-//            $("#error-msg").html("Your image could not be uploaded, please try again");
-//     //            $("#btnSubmit").prop("disabled", false);
-//         }
-//     });
-//
-//     let form_fields = $("#post_form").serialize();
-//     let content = $("#content").val();
-//     let file = $("#post-image").val();
-//     form_fields += ('&content=' + content);
-//     form_fields += ('&file=' + file);
-//
-//     $.post("../../models/write_post_model.php", form_fields).done(function (response) {
-//         if (response) {
-//
-//
-//         } else {
-//           $("#error-msg").html("Posted!");
-//         }
-//     });
-// });
+$(document).ready(function () {
+    let url = window.location.href;
+    let index = url.lastIndexOf('=');
+    
+    if (index !== -1) {
+        let error = url.substring(index + 1, url.length);
+        
+        if (error === 'size') {
+            $("#error-msg").html("The image is too big, please try again with a smaller one");
+        } else if (error === 'type') {
+            $("#error-msg").html("Only jpeg, jpg and png files are allowed, please try again");
+        } else if (error === 'upload') {
+            $("#error-msg").html("Something went wrong uploading the file, please try again");
+        } else {
+            $("#error-msg").html("");
+        }
+        
+        $.post("../../models/session_data.php").done(function (response) {
+            if (response) {
+                let data = JSON.parse(response);
+                
+                $("#title").val(data[0]);
+                $("#category").val(data[1]);
+                $("#content").text(data[2]);
+                $("#hashtags").val(data[3]);
+            }
+        });
+    }       
+});

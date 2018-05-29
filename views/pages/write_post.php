@@ -16,7 +16,6 @@
         session_start();
         $member_id = filter_input(INPUT_COOKIE, 'member_id', FILTER_SANITIZE_STRING);
         $security = filter_input(INPUT_COOKIE, 'security', FILTER_SANITIZE_STRING);
-        $error = filter_input(INPUT_GET, 'e', FILTER_SANITIZE_STRING);
 
         if (!$member_id || !$security) {
             header("Location:sign_in.php");
@@ -25,14 +24,6 @@
         if ($security != 'writer') {
             header("Location:../../index.php");
         }
-
-        if($error) {
-          $title = $_SESSION['title'] ?? '';
-          $category = $_SESSION['category'] ?? '';
-          $content = $_SESSION['content'] ?? '';
-        }
-
-        // or use jQuery??
         ?>
     </head>
     <body>
@@ -72,7 +63,7 @@
                 <h2>New Post</h2>
 
                 <div class="container mt-2">
-                    <form id="post_form" method="post" class="post-form mb-3" enctype="multipart/form-data" action="write_post_model.php">
+                    <form id="post_form" method="post" class="post-form mb-3" enctype="multipart/form-data" action="../../models/write_post_model.php">
                         <div class="form-group">
                             <label class="sr-only" for="title">Title</label>
                             <input type="text" name="title" id="title" class="form-control" placeholder="Title" required autofocus/>
@@ -98,7 +89,11 @@
                         <div id="uploaded-image"><!-- Placeholder for an uploaded image if editing --></div>
                         <div class="form-group">
                             <label class="sr-only" for="content">Content</label>
-                            <textarea class="form-control" id="content" rows="20" placeholder="Tell us your story..." required></textarea>
+                            <textarea class="form-control" id="content" rows="20" placeholder="Tell us your story..." name="content" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="hashtags">Hashtags</label>
+                            <input type="text" name="hashtags" id="hashtags" class="form-control" placeholder="#inspiration #creativity #learn" required />
                         </div>
                         <input type="submit" value="SUBMIT" class="peach btn-block button"/>
                     </form>
