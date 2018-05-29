@@ -32,8 +32,8 @@
                 </div>
                 <a href="../../index.php"><img src="../_img/logo/LogoWhite.png"></a>
             </div>
-            
-            <!-- NAV --> 
+
+            <!-- NAV -->
             <div id="nav" class="navbar navbar-expand-md navbar-light">
                 <div class="container">
                     <ul>
@@ -52,16 +52,16 @@
                             <li><a class="peach" href="#">Write</a></li>
                             <li class="icon"><a href="#">🔎</a></li>
                         </ul>
-                    </div>       
+                    </div>
                 </div>
             </div>
 
             <!-- BOTTOM SECTION -->
             <div class="container mb-5">
                 <h2>New Post</h2>
-                
+
                 <div class="container mt-2">
-                    <form id="post_form" method="post" class="post-form mb-3" enctype="multipart/form-data" name="post_form">
+                    <form id="post_form" method="post" class="post-form mb-3" enctype="multipart/form-data" action="write_post_model.php">
                         <div class="form-group">
                             <label class="sr-only" for="title">Title</label>
                             <input type="text" name="title" id="title" class="form-control" placeholder="Title" required autofocus/>
@@ -94,8 +94,8 @@
                     <div id="error-msg" class="text-center m-4"><!-- Error message for unsuccessful sign in --></div>
                 </div>
             </div>
-            
-            
+
+
             <!-- NEXT -->
             <div id="nextlink">
               <div class="container">
@@ -112,8 +112,8 @@
                   <h4>Women Who Can &copy;</h4>
                    <p>Designed and created with <span class="icon">&#x2665;</span> by <a href="https://github.com/annaecc">@annaecc</a>,
                       <a href="https://github.com/LauraCollard">@lauracollard</a>, <a href="https://github.com/loujean">@loujean</a>,
-                      <a href="https://github.com/alysanne">@alysanne</a> and <a href="https://github.com/StephBrooks88">@stephbrooks88</a>. 
-                      We use cookies to give you a smooth experience. We will never share your details with third parties. 
+                      <a href="https://github.com/alysanne">@alysanne</a> and <a href="https://github.com/StephBrooks88">@stephbrooks88</a>.
+                      We use cookies to give you a smooth experience. We will never share your details with third parties.
                       In order to use Women Who Can, you must agree to our Privacy Policy and our cookie policy.</p>
                 </div>
             </div>

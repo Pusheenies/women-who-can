@@ -6,15 +6,16 @@ $request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD', FILTER_SANITIZE_S
 $pdo = DB::getInstance();
 
 if ($request_method === 'POST') {
-    $member_id = filter_input(INPUT_COOKIE, 'member_id', FILTER_SANITIZE_STRING);    
+    $member_id = filter_input(INPUT_COOKIE, 'member_id', FILTER_SANITIZE_STRING);
     $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
     $category = filter_input(INPUT_POST, 'category', FILTER_SANITIZE_STRING);
     $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
-    $file = filter_input(INPUT_POST, 'file', FILTER_SANITIZE_STRING);
-    
+    $file_uploaded = isset($_FILES['post-file']['name']) && $_FILES['post-file']['name'] !== '';
+    $file_path = $file_uploaded ? uniqid('', true) : '';
+
     // File upload
     if ($file_uploaded) {
-        $file = $_FILES['post-image'];  
+        $file = $_FILES['post-image'];
         $file_name = $file['name'];
         $tmp_name = $file['tmp_name'];
         $file_size = $file['size'];
@@ -23,7 +24,7 @@ if ($request_method === 'POST') {
         $file_ext = explode('.', $file_name);
         $file_actual_ext = strtolower(end($file_ext));
         $allowed = ['jpg', 'jpeg', 'png'];
-        
+
         if (in_array($file_actual_ext, $allowed)) {
             if ($file_error === 0) {
                 if ($file_size < 1000000) {
@@ -34,6 +35,14 @@ if ($request_method === 'POST') {
                     move_uploaded_file($tmp_name, $file_destination);
                     $image_path = 'uploads/' . $file_new_name;
 
+                    $sql = "UPDATE posts
+                                  SET post_image = :image_path
+                                   WHERE post_image = :tmp_path;";
+                    $statement = $pdo->prepare($sql);
+                    $statement->execute([
+                        "image_path" => $image_path,
+                        "tmp_path" => $uid
+                    ]);
                 } else {
                     echo "File size error";
     //                echo "Oops file size is to big! Please make sure it is less than 1MB.";
@@ -47,5 +56,12 @@ if ($request_method === 'POST') {
     //        echo "Sorry, you cannot upload files of this type! Please make sure the extension is jpg, jpeg or png.";
         }
     echo "Image uploaded";
-    }
+  } else {
+    $image_path = ''
+  }
+
+  $post = new Post('', '', $category, $member_id, $title, $file_path, $content);
+  $post->new_post($pdo);
+
+  echo $file_path;
 }
