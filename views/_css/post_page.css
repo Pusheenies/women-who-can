@@ -39,3 +39,6 @@ h1 {
 .no_comment {
     margin-bottom: 50px;
 }
+#post_category_date a {
+    text-decoration: underline;
+}

@@ -39,11 +39,11 @@ $_SESSION["post_id"]= $_REQUEST["post"];
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav full">
                             <li><a href="pages/profile.php">Profile</a></li>
-                            <li><a href="#">Comedy</a></li>
-                            <li><a href="#">Innovate</a></li>
-                            <li><a href="#">Learn</a></li>
-                            <li><a href="#">Inspire</a></li>
-                            <li class="icon"><a href="#">🔎</a></li>
+                            <li><a href="pages/nav_search_results.php?cat=1">Comedy</a></li>
+                            <li><a href="pages/nav_search_results.php?cat=2">Innovate</a></li>
+                            <li><a href="pages/nav_search_results.php?cat=3">Learn</a></li>
+                            <li><a href="pages/nav_search_results.php?cat=4">Inspire</a></li>
+                            <li class="icon"><a href="pages/search.html">🔎</a></li>
                         </ul>
                     </div>       
                 </div>

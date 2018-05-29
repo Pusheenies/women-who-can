@@ -1,13 +1,25 @@
 <!-- <!DOCTYPE html> -->
+
+<?php
+if(isset($_REQUEST["cat"])){
+    $category=$_REQUEST["cat"];
+} else {
+    $category= "";
+}
+if(isset($_REQUEST["hashtag"])){
+    $hashtag= $_REQUEST["hashtag"];
+} else {
+    $hashtag= "";
+}
+?>
 <html>
     <head>
-        <title>WWC - Search</title>
+        <title>WWC - Results</title>
         <meta charset="UTF-8">    
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
         <!--StyleSheets-->
         <link rel="stylesheet" type="text/css" href="../_css/style.css" />
-        <link rel="stylesheet" type="text/css" href="../_css/search.css" />
         <link rel="stylesheet" type="text/css" href="../_css/styles.css" />
         <!--Fonts-->
         <link rel="stylesheet" type="text/css" href="../_css/ss-pika.css" />
@@ -36,65 +48,27 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav full">
                             <li><a href="profile.php">Profile</a></li>
-                            <li><a href="#">Comedy</a></li>
-                            <li><a href="#">Innovate</a></li>
-                            <li><a href="#">Learn</a></li>
-                            <li><a href="#">Inspire</a></li>
-                            <li class="icon"><a href="#">🔎</a></li>
+                            <li><a href="nav_search_results.php?cat=1">Comedy</a></li>
+                            <li><a href="nav_search_results.php?cat=2">Innovate</a></li>
+                            <li><a href="nav_search_results.php?cat=3">Learn</a></li>
+                            <li><a href="nav_search_results.php?cat=4">Inspire</a></li>
+                            <li class="icon"><a href="search.html">🔎</a></li>
                         </ul>
                     </div>       
                 </div>
             </div>
         </div>
 
-        <div class="container" id="search">
-                <h1>Post search</h1>
-                <p>Search by category, hashtag, title or author (or any combination)</p>
-            <div id="form" class="col-sm-6 offset-sm-3">
-                <div>
+        <form>
+            <input type="hidden" id="category" value="<?=$category?>">
+            <input type="hidden" id="hashtag" value="<?=$hashtag?>">
+        </form>
 
-                    <label>Category:</label>
-                    <select class="form-control" id="category">
-                        <option value=""></option>
-                        <option value="Comedy">Comedy</option>
-                        <option value="Innovate">Innovate</option>
-                        <option value="Learn">Learn</option>
-                        <option value="Inspire">Inspire</option>
-                    </select>
-
-                    <label>Hashtag:</label>
-                    <select class="form-control" id="hashtag">
-                        <option value=""></option>
-                        <option value="#WomenInTech">#WomenInTech</option>
-                        <option value="#RoleModels">#RoleModels</option>
-                        <option value="#GenderEquality">#GenderEquality</option>
-                        <option value="#ComputerScience">#ComputerScience</option>
-                        <option value="#Culture">#Culture</option>
-                        <option value="#Entrepreneur">#Entrepreneur</option>
-                        <option value="#Comedy">#Comedy</option>
-                        <option value="#Brain">#Brain</option>
-                        <option value="#Innovation">#Innovation</option>
-                        <option value="#WatchAVideo">#WatchAVideo</option>
-                        <option value="#Learning">#Learning</option>
-                    </select>
-                    
-                    <label for="title">Title:</label>
-                    <input type="text" id="title" class="form-control" />
-                    <label for="author">Username of the author:</label>
-                    <input type="text" id="author" class="form-control"/>
-                    <div class="text-center">
-                        <input type="button" id="submit" value="Search" class="peach search-btn"/>
-                    </div>
-
-                </div>
-            </div>
-        </div>
         <div class="container" id="results">
             <!--search results-->
         </div>
 
-
-        <div class="clear"></div> <!--needed for the footer to be at the bottom-->
+        <div class="clear"></div>
         <!-- FOOTER -->
         <div id="footer">
             <div class="container">
@@ -109,6 +83,6 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-        <script src="../../controllers/search_controller.js"></script>
+        <script src="../../controllers/nav_search_controller.js"></script>
     </body>
 </html>
