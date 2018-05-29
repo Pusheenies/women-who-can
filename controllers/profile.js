@@ -10,6 +10,7 @@ $(document).ready(function(){
         
         //if writer, own posts
         if(member["own_posts"]){
+            console.log(member);
             $("#own_posts").append("<div id='blogposts' class='left'>"
                                     +"<h2>My posts</h2>"
                                     +"<ul id='own_posts_list' style='height:auto;'>");
@@ -27,8 +28,8 @@ $(document).ready(function(){
                                         +member.own_posts[i][0]
                                         +"</a>"
                                         +"</h1>"
-                                        +"<p style='font-size:15px;'>Posted "+member.own_posts[i][2]+$days+"</p>"
-                                        +"<p style='margin-top:70px;'><a href='#' class='peach'>Edit/delete post</a></p>"
+                                        +"<p><a href='#' class='peach'>Edit/delete post</a></p>"
+                                        +"<p style='font-size:15px;margin-top:80px;'>Posted "+member.own_posts[i][2]+$days+"</p>"
                                         +"</div>"
                                         +"</li>");
             }
@@ -56,8 +57,7 @@ $(document).ready(function(){
                                             +"</a>"
                                             +"</h1>"
                                             +"<p style='font-size:20px;'>"+member.favourites[i][5]+"</p>"
-                                            +"<p style='font-size:15px;'>"+member.favourites[i][2]+$days+"</p>"
-                                            +"<p style='margin-top:50px;'><a href='#' class='peach'>Remove from favourites</a></p>"
+                                            +"<p style='font-size:15px;margin-top:80px;'>Posted "+member.favourites[i][2]+$days+"</p>"
                                             +"</div>"
                                             +"</li>");
             }
@@ -89,7 +89,6 @@ $(document).ready(function(){
             for(var i=0; i<member["followed"].length; i++){
                 $("#followed_div").append("<p class='text-center'>"+member.followed[i]+"</p>");
             }
-            $("#followed_div").append("<p class='text-center' style='font-size:12px;'><a href='#' class='peach'>Update followed members</a></p>");
         } else {
             $("#followed_div").append("<p class='text-center'>You're not following anyone at the moment.</p>");
         }

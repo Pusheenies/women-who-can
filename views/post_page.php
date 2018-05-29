@@ -58,7 +58,7 @@ $_SESSION["post_id"]= $_REQUEST["post"];
             <?php
             $member_id= filter_input(INPUT_COOKIE, 'member_id', FILTER_SANITIZE_STRING);
             if(!$member_id){
-                echo "<p><a href='pages/sign_in.php' class='peach'>To follow/unfollow, please sign in!</a></p>";
+                echo "<p><a href='pages/sign_in.php' class='peach'>To follow/unfollow this member, please sign in!</a></p>";
             } else {
                 echo "<p><span id='follow_btn'></span></p>";
             }
@@ -68,6 +68,18 @@ $_SESSION["post_id"]= $_REQUEST["post"];
         <div class="container" id="post_category_date">
             <!--post category and date-->
         </div>
+
+        <div class="container" id="add_fav">
+        <?php
+        $member_id= filter_input(INPUT_COOKIE, 'member_id', FILTER_SANITIZE_STRING);
+        if(!$member_id){
+            echo "<p><a href='pages/sign_in.php' class='peach'>To add this post to your favourites, please sign in!</a></p>";
+        } else {
+            echo "<p><span id='favourites_btn'></span></p>";
+        }
+        ?>
+        </div>
+
 
         <div class="container" id="post_content">
             <!--post content-->
