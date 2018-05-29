@@ -80,6 +80,9 @@ $_SESSION["post_id"]= $_REQUEST["post"];
         ?>
         </div>
 
+        <div class="container" id="post_image">
+        <!--post image-->
+        </div>
 
         <div class="container" id="post_content">
             <!--post content-->

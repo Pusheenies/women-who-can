@@ -8,7 +8,6 @@ $post_id= $_SESSION["post_id"];
 
 //fetching post details
 $stmt= $pdo->prepare("SELECT * FROM posts p
-                        
                         JOIN categories c ON p.category_id=c.category_id
                         JOIN members m ON m.member_id=p.member_id
                         WHERE p.post_id=:post_id");
@@ -24,5 +23,5 @@ while($row= $stmt->fetch(PDO::FETCH_ASSOC)){
 }
 $post["hashtags"]= $hashtags;
 
-
+$post["post_content"]= utf8_encode($post["post_content"]);
 echo json_encode($post);

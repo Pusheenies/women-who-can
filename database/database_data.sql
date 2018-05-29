@@ -116,7 +116,7 @@ INSERT INTO posts
 (post_date, category_id, member_id, title, post_image,  post_content)
 VALUES
 
-("2018-05-25", "4", "19", "Girls Need Role Models", "uploads/01_Girls_Need_Role_Models.jpeg", "Girls need role models - in every part of their lives
+("2018-05-25", 4, 19, "Girls Need Role Models", "uploads/01_Girls_Need_Role_Models.jpeg", "Girls need role models - in every part of their lives
 
 I often get asked how we are going to fix the gender inequality problem in tech. This is a huge, complicated, multi-faceted problem. That needs to be worked on from many sides to effect change. However, I do believe there is one thing we can do that might just get us over the tipping point.
 - Role Models.
@@ -174,7 +174,7 @@ I hope you're able to be part of this exciting work and I'd love to hear your st
 Credit for original article: (https://code.likeagirl.io/girls-need-role-models-bef0998fd71e)"),
 
 
-("2018-05-12","3", "4", "A Woman in Computing Science?", "uploads/02_Woman_in_Computer_Science.jpeg", "Though my story began in the city of Allahabad, India, the story that is relevant for now is my journey as a woman in computing science. That side of the story goes back into my early school years, when computers were still new to India and households were only beginning to have one at home. It was early 2000's and my first memory of a computer, studying in a school in the metropolitan city of Gurgaon, is that of a dark, air-conditioned laboratory in the basement of my school. It was always an adventure to go there and work on computers with my friends. We must have been in Grade 4 or 5.
+("2018-05-12",3, 4, "A Woman in Computing Science?", "uploads/02_Woman_in_Computer_Science.jpeg", "Though my story began in the city of Allahabad, India, the story that is relevant for now is my journey as a woman in computing science. That side of the story goes back into my early school years, when computers were still new to India and households were only beginning to have one at home. It was early 2000's and my first memory of a computer, studying in a school in the metropolitan city of Gurgaon, is that of a dark, air-conditioned laboratory in the basement of my school. It was always an adventure to go there and work on computers with my friends. We must have been in Grade 4 or 5.
 The first time I felt passionate about computing science was in Grade 8. We were studying Hyper Text Markup Language (HTML) for that year and as the final project, a friend and I had to design a website. My dad, who had moved to Canada when I was two years old, had sent me many DK Eyewitness books by then and after looking through my collection, we decided to build a website on being an explorer. Grade 9 was Microsoft Visual Basic and Grade 10 was Structured Query Language(SQL) and databases. The computer lab was no longer the dark one in the basement; it was now a nice room on the top level of the school, an open area with computers lined along the perimeter.
 I changed schools in Grade 11. I decided not to take computing science. Instead, I decided to learn Economics as my fifth subject; the other four were predetermined for me - Physics, Chemistry, Math and English.
 I passed Grade 12 with flying colours. My mom and I explored which undergraduate programs I could apply for and we chose a three-year Bachelors in Computing Science (Honors) from University of Delhi. As that neared its completion in 2014, I applied and got accepted to the Masters in Science (Computing Science) at University of Alberta, Canada. I moved away from my mom and moved in with my dad's family. I completed my MS in 2016, decided I wanted to learn more about technology in education, and pursued a Masters in Educational Technology from the same university.
@@ -224,7 +224,7 @@ My aim was to understand my history and ask the questions that I have with an at
 Credit for original article: (https://code.likeagirl.io/a-woman-in-computer-science-14bb0046e254)"),
 
 
-("2018-05-13","4", "2", "40 Badass Women in Emerging Tech", "uploads/03_Badass_Women.jpg", "40 Badass Women in Emerging Tech to Follow on Twitter
+("2018-05-13",4, 2, "40 Badass Women in Emerging Tech", "uploads/03_Badass_Women.jpg", "40 Badass Women in Emerging Tech to Follow on Twitter
 Investors are the gatekeepers, holding the keys to who gets funded, who gets to scale their product, and what products get brought to market for mass consumption. There are about 800 VC firms, and only about 28 of these firms were founded by women.
 2% of Venture Funding Goes to Women-led Ventures
 This being said, it comes as no surprise that women startup founders raise only 2% of all venture funding, despite owning 38% of the businesses in the US, generating approximately $1.6 trillion in revenues, and employing more than 9 million people. For women of color raising money, the stats are even more dismal not to mention the overt sexism and harassment women founders have faced raising capital. Even with studies showing that women-led tech startups generate 35% higher ROI and 12% higher revenue than startups run exclusively by men, women still face significant obstacles raising money. Even with all of the tech blogs and with the NYT shining a spotlight on the funding gap, not much is improving.
@@ -283,7 +283,7 @@ Credit for original article: (https://code.likeagirl.io/40-badass-women-in-emerg
 
 
 
-("2018-05-14","4", "1", "Most Americans Cannot Name a Single Living Scientist-Let Alone a Female One", "uploads/04_Most_Americans_Cant_Name.jpg", "When most people think of a scientist, they picture shocking white hair, nerdy glasses, a stark white lab coat and - naturally - a man. Maybe it's a specific person that pops into your head, like Albert Einstein, or Rick Sanchez, or Bill Nye, or Charles Darwin, or Walter White. The point is still the same: Our imagination is seriously limited by culture.
+("2018-05-14",4, 1, "Most Americans Cannot Name a Single Living Scientist-Let Alone a Female One", "uploads/04_Most_Americans_Cant_Name.jpg", "When most people think of a scientist, they picture shocking white hair, nerdy glasses, a stark white lab coat and - naturally - a man. Maybe it's a specific person that pops into your head, like Albert Einstein, or Rick Sanchez, or Bill Nye, or Charles Darwin, or Walter White. The point is still the same: Our imagination is seriously limited by culture.
 That's not just my opinion. A recent survey from Research!America has found 81 percent of Americans cannot name a single living scientist - not even one. Worst still - of the pathetic 19 percent able to recall a living scientist, 27 percent named Stephen Hawking (*The survey was taken before Stephen Hawking's recent and tragic death.), 19 percent named Neil deGrasse Tyson and 5 percent named Bill Nye. Jane Goodall - apparently the only living female scientist the American public is capable of remembering - was mentioned by a mere 2 percent.
 This is how inequality in science is perpetuated: through recycled stereotypes, which leave little room for any sort of diversity. Because science - regardless of how much it wants to be unbiased, impartial and open-minded - can never be more than the sum of its human parts, and those parts are predominantly white and male.
 Where have all the scientists gone?
@@ -308,7 +308,7 @@ Credit for original article: https://medium.com/athena-talks/most-americans-cann
 
 
 
-("2018-05-15","4", "20", "Is the Industry Ready for Women Like Us", "uploads/05_Is_the_Industry_Ready.jpeg", "Almost two years ago my friend Massimo, exquisite flamenco guitar player and literature expert, told me the story of Vivienne Haigh-Wood.
+("2018-05-15",4, 20, "Is the Industry Ready for Women Like Us", "uploads/05_Is_the_Industry_Ready.jpeg", "Almost two years ago my friend Massimo, exquisite flamenco guitar player and literature expert, told me the story of Vivienne Haigh-Wood.
 If you are a connoisseur of the English and American literature, you might have heard of her, but, even so, you probably have not.
 England, early Twentieth Century. Who is Vivienne Haigh-Wood?
 She is just one of those eccentric women soon labeled as hysterical and forced into an asylum, or rather an elegant clinic for rich people: she is from a wealthy family, after all. Social privilege, however, cannot save her from a perpetual deprivation of personal freedom.
@@ -332,7 +332,7 @@ Credit for original article: https://medium.com/athena-talks/is-the-industry-rea
 
 
 
-("2018-05-16","4", "7", "I've Been Traveling The World My Entire Life And It's Taught Me This About Entrepreneurship", "uploads/06_Ive_Been_Travelling.jpeg", "My first passport was issued when I was 2 months old. I've lived in 9 countries and I've traveled to 27. My experiences traveling the world have taught me a significant amount about people, culture and myself.
+("2018-05-16",4, 7, "I've Been Traveling The World My Entire Life And It's Taught Me This About Entrepreneurship", "uploads/06_Ive_Been_Travelling.jpeg", "My first passport was issued when I was 2 months old. I've lived in 9 countries and I've traveled to 27. My experiences traveling the world have taught me a significant amount about people, culture and myself.
 
 Many travel in search for answers or an 'Eat, Pray, Love' pivotal moment in their lives. When in reality, there is no one 'defining moment' that turns someone knowledgeable or cultured. It's the culmination of all our experiences that creates who we are as people.
 I've recently noticed how much I pull from my experiences traveling when making entrepreneurial decisions, like what decision to make next, or how to better relate to and understand different kinds of people.
@@ -371,7 +371,7 @@ Credit for original article: https://medium.com/athena-talks/ive-been-traveling-
 
 
 
-("2018-05-23","1", "18", "Comedy in Tech", "uploads/07_Comedy_in_Tech.jpg", "We're living through a golden age of comedy. The genre is more popular than ever, fuelled by technology and a generational shift as consumers increasingly value experiences over things. And it's not just the big names that are benefiting from the boom - up-and-comer comedians and venues are, too.
+("2018-05-23",1, 18, "Comedy in Tech", "uploads/07_Comedy_in_Tech.jpg", "We're living through a golden age of comedy. The genre is more popular than ever, fuelled by technology and a generational shift as consumers increasingly value experiences over things. And it's not just the big names that are benefiting from the boom - up-and-comer comedians and venues are, too.
 Online consumption of comedy seems to be insatiable. The world's top ten comics on social media have a combined reach of more than 125 million fans spanning Twitter, Facebook, YouTube, and more. Look at music streaming sites and you'll find a similar story: Pandora's comedy channel, for example, attracts more four million unique listeners per month.
 Here's how artists and promoters and organisers are leveraging this growing interest online to grow their audiences and evolve the live comedy experience.
 Thanks to a plethora of new platforms for comedy - from podcasts to livestreams - there's been an outpouring of fresh comedy from a wide and diverse group of comics. This original content is helping comics, promoters, and comedy venues alike grow their audiences.
@@ -392,7 +392,7 @@ Credit for original article (partial): https://www.ted.com/talks/heather_knight_
 
 
 
-("2018-05-18","1", "5", "The Divine Comedy of the Tech Sisterhood", "uploads/08_Divine_Comedy_Tech.jpeg", "The Divine Comedy of the Tech Sisterhood
+("2018-05-18",1, 5, "The Divine Comedy of the Tech Sisterhood", "uploads/08_Divine_Comedy_Tech.jpeg", "The Divine Comedy of the Tech Sisterhood
 This is a work of fiction. Names, characters, businesses, places, events and incidents are either the products of the author's imagination or used in a fictitious manner. Any resemblance to actual persons, living or dead, or actual events is purely coincidental.
 
 A letter from Virgil
@@ -437,7 +437,7 @@ To be continued!….You want to read more don't you?! the full content is availa
 Credit for original article: https://code.likeagirl.io/the-divine-comedy-of-the-tech-sisterhood-62bf54fd2186"),
 
 
-("2018-05-19","1", "3", "Tinder Taps Comedian Whitney Cummings to Launch 'Reactions'", "uploads/09_Tinder_Taps_Comedian.jpg", "Following in the footsteps of Facebook and iMessage, Tinder has today introduced Reactions, letting Tinder users send each other custom animated responses.
+("2018-05-19",1, 3, "Tinder Taps Comedian Whitney Cummings to Launch 'Reactions'", "uploads/09_Tinder_Taps_Comedian.jpg", "Following in the footsteps of Facebook and iMessage, Tinder has today introduced Reactions, letting Tinder users send each other custom animated responses.
 These reactions include Hearts, Eye Roll, Round of Applause, Martini Throw, etc. This makes it even easier for Tinder users to casually use the app without actually having to work at the conversation.
 In January of last year, Tinder introduced Giphy support and bigger emojis. Reactions seem like a natural extension of that, making the already featherweight Tinder experience even more casual and simplified.
 But it seems that Reactions are part of a larger initiative at Tinder, which is meant to give women all the tools they need to deal with douchebags.
@@ -450,7 +450,7 @@ Tinder Reactions might make conversation easier between Tinder parties, but it d
 Credit for original article: https://techcrunch.com/2017/10/04/tinder-taps-comedian-whitney-cummings-to-launch-reactions/"),
 
 
-("2018-05-10","2", "16", "A Headset that Reads your Brainwaves", "uploads/10_Headset_that_Reads_Brainwaves.jpg", "Tan Le, is a pioneer of human brain research, with an incredible story of her personal journey from Vietnamese refugee to starting and selling a successful technology company at age 26 to founding EMOTIV, a company that has developed breakthrough technology for connecting digital media to the human brain.
+("2018-05-10",2, 16, "A Headset that Reads your Brainwaves", "uploads/10_Headset_that_Reads_Brainwaves.jpg", "Tan Le, is a pioneer of human brain research, with an incredible story of her personal journey from Vietnamese refugee to starting and selling a successful technology company at age 26 to founding EMOTIV, a company that has developed breakthrough technology for connecting digital media to the human brain.
 
 'What will happen in next few decades is more astounding than what's happened in the last 1,000 years,' she said. She urges audiences to follow their dreams, even if they sometimes seem unrealistic. 'You'll often be told it can't be done, but if you have the courage to pursue your goals, then 'can't be done' becomes a challenge rather than an insurmountable obstacle,' she said.
 Tan's mission entails giving everyday citizens the tools to better understand how their own brains function.
@@ -485,7 +485,7 @@ Those interested in using Emotiv's products to learn more about their own brain 
 Credit for original article: https://www.nationalgeographic.org/news/innovator-and-entrepreneur-tan-le/"),
 
 
-("2018-05-22","2", "6", "In a Computer Scientist's Shoes", "uploads/11_In_Computer_Scientists_Shoes.jpg", "Fabulous shoes made to your own design might not sound like part of your usual computer science career.
+("2018-05-22",2, 6, "In a Computer Scientist's Shoes", "uploads/11_In_Computer_Scientists_Shoes.jpg", "Fabulous shoes made to your own design might not sound like part of your usual computer science career.
 'It sounds more fashion than technical, but it's all online so there are a lot of other skills that feed into it,' explains UNSW Australia computer science graduate Belinda Teh, who works as a software engineer for Shoes of Prey. 'It needs database management, web design and networking. I also work a lot with graphics, scripting and 3D rendering.'
 Bel's parents exposed her to the same activities as her brother from a young age, including Dick Smith electronics workshops. Always interested in maths and science, she considered studying electrical engineering, but chose CS because of the amazing projects she could get involved in – and she hasn't looked back since.
 Bel was part of UNSW Australia's winning team in the 2014 RoboCup tournament in Brazil. She was in charge of programming the robots' kicking action – to control details such as where to kick the ball, how to get the ball to a particular spot at a particular speed, and so on.
@@ -494,7 +494,7 @@ One day, Bel hopes to work for SpaceX – a company that designs, makes and laun
 Credit for original article: https://careerswithstem.com.au/profiles/belinda-teh/"),
 
 
-("2018-05-12","2", "3", "An ex-Facebook exec making wearable MRI device", "uploads/12_ExFacebook_Exec_Making_device.jpg", "An ex-Facebook exec who 'went home to die' is making a device to scrap the costly procedure that almost didn't save her
+("2018-05-12",2, 3, "An ex-Facebook exec making wearable MRI device", "uploads/12_ExFacebook_Exec_Making_device.jpg", "An ex-Facebook exec who 'went home to die' is making a device to scrap the costly procedure that almost didn't save her
 Former Facebook executive Mary Lou Jepsen said a near-death experience inspired her latest project, a device that she said would let us 'look inside any part of the body'.
 Jepsen has been vague about the technology but said it would be affordable and wearable with MRI-like capabilities.
 She claims the device could have a broad range of applications, including learning more about a range of mental illnesses as well as heart disease and certain types of cancer, but has yet to release further details.
@@ -515,7 +515,7 @@ Credit for original article: http://uk.businessinsider.com/mary-lou-jepsen-devic
 
 
 
-("2018-05-13","3", "5", "My 18-month Coding Journey", "uploads/13_My_18month_Coding_Journey.jpg", "How I went from 33-year-old museum tour guide to professional Web Developer and UX Designer: My 18-month coding journey
+("2018-05-13",3, 5, "My 18-month Coding Journey", "uploads/13_My_18month_Coding_Journey.jpg", "How I went from 33-year-old museum tour guide to professional Web Developer and UX Designer: My 18-month coding journey
 My story is a bit different from the stories you have read so many times. I did not get my first web development job in 3 months. Not in 6 months. Not even in a year. My journey took 18 months, which were tough and frustrating but also exciting and amazing.
 My background, like many other self taught developers, is one that seems as far as possible from any type of technology. I have a Master's degree in History. I worked as a guide in a museum, as a group facilitator in a non-profit organisation, and as a teacher. I loved all of these roles. Otherwise, I wouldn't have chosen to spend my time doing them.
 At some point I decided to change it all. I wanted to make a bigger impact through my work, especially in non-profit organistions. In addition, after living in 3 countries (in 3 continents) in 6 years, I wanted to start a career that would not require me to find a new job and even a new field each time I move.
@@ -568,7 +568,7 @@ Credit for original article: https://medium.freecodecamp.org/the-post-i-hoped-to
 
 
 
-("2018-05-24","3", "2", "How to Layout and Design a Website", "uploads/14_How_to_Design_Website.jpg", "How to layout and design a website (without any design skills)
+("2018-05-24",3, 2, "How to Layout and Design a Website", "uploads/14_How_to_Design_Website.jpg", "How to layout and design a website (without any design skills)
 
 If you're trying to build freelance websites for clients, or even just trying to build up your portfolio, you may have come across this conundrum: How do you build a website if you don't have any web design skills?
 Here are some options:
@@ -664,7 +664,7 @@ I hope you found this post helpful!
 Credit for original article: https://medium.freecodecamp.org/how-to-layout-and-design-a-website-without-any-design-skills-86d94e40b55a"),
 
 
-("2018-05-15","3", "17", "Increase your Chances of a Landing a Developer Role", "uploads/15_Increase_Chances_of_Developer_Job.jpg", "How to increase your chances of landing a developer job
+("2018-05-15",3, 17, "Increase your Chances of a Landing a Developer Role", "uploads/15_Increase_Chances_of_Developer_Job.jpg", "How to increase your chances of landing a developer job
 
 In a recent job as a senior developer, I helped interview and hire many of my employer's development team members. This is a brain dump of my advice based on those interviews.
 I've followed a lot of it myself in interviewing for recent positions as a candidate. And I recommend these approaches to my friends when they're applying to development positions.
