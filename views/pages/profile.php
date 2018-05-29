@@ -35,18 +35,24 @@
             <div id="nav" class="navbar navbar-expand-md navbar-light">
                 <div class="container">
                     <ul>
-                        <li><a class="peach" href="../../index.php">Home</a></li>
+                        <li><a href="../../index.php">Home</a></li>
                     </ul>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav full">
-                            <li><a href="profile.php">Profile</a></li>
+                            <li><a class="peach" href="profile.php">Profile</a></li>
                             <li><a href="nav_search_results.php?cat=1">Laugh</a></li>
                             <li><a href="nav_search_results.php?cat=2">Innovate</a></li>
                             <li><a href="nav_search_results.php?cat=3">Learn</a></li>
                             <li><a href="nav_search_results.php?cat=4">Inspire</a></li>
+                            <?php
+                            $security = filter_input(INPUT_COOKIE, 'security', FILTER_SANITIZE_STRING);
+                            if ($security === 'writer') {
+                                echo "<li><a href='write_post.php'>Write</a></li>";
+                            }
+                            ?>
                             <li class="icon"><a href="search.html">🔎</a></li>
                         </ul>
                     </div>       

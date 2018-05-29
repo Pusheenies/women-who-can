@@ -47,6 +47,12 @@
                             <li><a href="views/pages/nav_search_results.php?cat=2">Innovate</a></li>
                             <li><a href="views/pages/nav_search_results.php?cat=3">Learn</a></li>
                             <li><a href="views/pages/nav_search_results.php?cat=4">Inspire</a></li>
+                            <?php
+                            $security = filter_input(INPUT_COOKIE, 'security', FILTER_SANITIZE_STRING);
+                            if ($security === 'writer') {
+                                echo "<li><a href='views/pages/write_post.php'>Write</a></li>";
+                            }
+                            ?>
                             <li class="icon"><a href="views/pages/search.html">🔎</a></li>
                         </ul>
                     </div>       
