@@ -1,6 +1,4 @@
 <?php
-
-
 class Member {
     protected $member_id;
     protected $username;
@@ -57,6 +55,7 @@ class Member {
     function getFavourites($pdo){
         $stmt= $pdo->prepare("SELECT * FROM posts p
                                 JOIN favourites f ON f.post_id=p.post_id
+                                JOIN members m ON m.member_id=p.member_id
                                 WHERE f.member_id=:id");
         $stmt->execute(array(":id" => $_SESSION["id"]));
         $favourites= [];
@@ -205,8 +204,16 @@ class Post {
     function getPost_content() {
         return $this->post_content;
     }
+    function getAuthorUsername($pdo){
+        $author_id= $this->member_id;
+        $stmt= $pdo->prepare("SELECT username FROM members WHERE member_id=:member_id");
+        $stmt->execute(array(":member_id" => $author_id));
+        $row= $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($row){
+            return $row["username"];
+        }
+    }
 }
-
 class Posts_List {
     private $posts;
     
@@ -240,7 +247,6 @@ class Posts_List {
         return $this->posts;
     }
 }
-
 class Member_Sign_In {
     private $username;
     private $text_password;
@@ -280,5 +286,85 @@ class Member_Sign_In {
 
         setcookie('member_id', $this->member_id, $expiry, '/');
         setcookie('security', $this->security_group, $expiry, '/');
+    }
+}
+class rawSearch {
+    protected $category;
+    protected $hashtag;
+    protected $title;
+    protected $author;
+    function __construct($category, $hashtag, $title, $author) {
+        $this->category = $category;
+        $this->hashtag = $hashtag;
+        $this->title = $title;
+        $this->author = $author;
+    }
+    function getCategoryID($pdo){
+        $stmt= $pdo->prepare("SELECT * FROM categories
+                                WHERE category_description=:category_description");
+        $stmt->execute(array(":category_description" => $this->category));
+        $row= $stmt->fetch(PDO::FETCH_ASSOC);
+        if($row){
+            return $row["category_id"];
+        } else {
+            return "";
+        } 
+    }
+    function getAuthorID($pdo){
+        $stmt= $pdo->prepare("SELECT * FROM members m
+                            JOIN posts p ON p.member_id=m.member_id
+                            WHERE m.username=:username");
+        $stmt->execute(array(":username" => $this->author));
+        $row= $stmt->fetch(PDO::FETCH_ASSOC);
+        if($row){
+            return $row["member_id"];
+        } else {
+            return "Not an author";
+        }
+    }
+}
+class Search {
+    protected $category_id;
+    protected $hashtag;
+    protected $title;
+    protected $author_id;
+    function __construct($category_id, $hashtag, $title, $author_id) {
+        $this->category_id = $category_id;
+        $this->hashtag = $hashtag;
+        $this->title = $title;
+        $this->author_id = $author_id;
+    }
+    function searchByXParams($pdo){
+        $search_results= [];
+        $wheres= [];
+        $params= [];
+        if(!empty($this->category_id)){
+            $wheres[]= "p.category_id = :category_id";
+            $params[":category_id"]= $this->category_id;
+        }
+        if(!empty($this->hashtag)){
+            $wheres[]= "ph.hashtag_id = :hashtag";
+            $params[":hashtag"]= $this->hashtag;
+        }
+        if(!empty($this->title)){
+            $wheres[]= "p.title LIKE CONCAT('%', :title, '%')";
+            $params[":title"]= $this->title;
+        }
+        if(!empty($this->author_id)){
+            $wheres[]= "p.member_id = :author_id";
+            $params[":author_id"]= $this->author_id;
+        }
+        $sql= "SELECT p.post_id, p.title, p.post_image, p.post_date, m.username FROM posts p
+                JOIN posts_hashtags ph ON ph.post_id=p.post_id
+                JOIN members m ON m.member_id=p.member_id";
+        if(!empty($wheres)){
+            $sql.= " WHERE " . implode(" AND ", $wheres);
+        }
+        $stmt= $pdo->prepare($sql);
+        $stmt->execute($params);
+        while ($row= $stmt->fetch(PDO::FETCH_ASSOC)){
+            array_push($search_results, $row);
+        }
+        return $search_results;
     }
 }

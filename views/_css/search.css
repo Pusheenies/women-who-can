@@ -1,0 +1,18 @@
+p {
+    font-size: 15px;
+}
+.search-btn {
+    margin-top: 15px;
+    border: none;
+    background-color: white;
+    font-size: 20px;
+}
+#search {
+    margin-bottom: 50px;
+}
+.date {
+    margin-top: 80px;
+}
+.author {
+    font-size: 20px;
+}

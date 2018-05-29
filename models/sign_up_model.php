@@ -32,7 +32,8 @@ if ($request_method === 'POST') {
               $query = $pdo->prepare($mysql);
               $query->execute();
 
-              echo "Sign up successful";
+              header("Location: ../views/pages/sign_in.php");
+              return;
             }  
         }
     }

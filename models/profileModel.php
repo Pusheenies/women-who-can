@@ -1,9 +1,10 @@
 <?php
 session_start();
-include "../pdo.php";
 include "class_lib.php";
+include "../connection.php";
+$pdo = DB::getInstance();
 
-$_SESSION["id"]= 15;
+$_SESSION["id"]= filter_input(INPUT_COOKIE, 'member_id', FILTER_SANITIZE_STRING);
 
 //fetching member details
 $stmt= $pdo->prepare("SELECT * FROM members m
@@ -34,7 +35,7 @@ $member["favourites"]= [];
 foreach($favourites as $favourite){
     $time_diff= (time()-strtotime($favourite->getPost_date())) / (60*60*24);
     $time_diff= floor($time_diff);
-    $favourite_details= [htmlentities($favourite->getTitle()), $favourite->getPost_id(), $time_diff, htmlentities($favourite->getPost_content()), $favourite->getPost_image()];
+    $favourite_details= [htmlentities($favourite->getTitle()), $favourite->getPost_id(), $time_diff, htmlentities($favourite->getPost_content()), $favourite->getPost_image(), $favourite->getAuthorUsername($pdo)];
     array_push($member["favourites"], $favourite_details);
 }
 
