@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../connection.php";
 include "class_lib.php";
 
@@ -11,7 +12,10 @@ if ($request_method === 'POST') {
     $category = filter_input(INPUT_POST, 'category', FILTER_SANITIZE_STRING);
     $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
     $file_uploaded = isset($_FILES['post-file']['name']) && $_FILES['post-file']['name'] !== '';
-    $file_path = $file_uploaded ? uniqid('', true) : '';
+
+    $_SESSION['title'] = $title;
+    $_SESSION['category'] = $category;
+    $_SESSION['content'] = $content;
 
     // File upload
     if ($file_uploaded) {
@@ -30,38 +34,36 @@ if ($request_method === 'POST') {
                 if ($file_size < 1000000) {
 
                     // prevent existing uploaded files being overwritten by giving them a unique name made up of the file
-                    $file_new_name = uniqid('', true) . "." . $file_actual_ext;
+                    $uid = uniqid('', true);
+                    $file_new_name = $uid . "." . $file_actual_ext;
                     $file_destination = '../uploads/' . $file_new_name;
                     move_uploaded_file($tmp_name, $file_destination);
                     $image_path = 'uploads/' . $file_new_name;
-
-                    $sql = "UPDATE posts
-                                  SET post_image = :image_path
-                                   WHERE post_image = :tmp_path;";
-                    $statement = $pdo->prepare($sql);
-                    $statement->execute([
-                        "image_path" => $image_path,
-                        "tmp_path" => $uid
-                    ]);
                 } else {
+                  // POST request with file size error and form data
+                  header("Location:write_post.php?e=size");
                     echo "File size error";
     //                echo "Oops file size is to big! Please make sure it is less than 1MB.";
                 }
             } else {
+              // POST request with upload error and form data
+              header("Location:write_post.php?e=upload");
                 echo "Upload error";
     //            echo "There was an error uploading your file!";
             }
         } else {
+          // POST request with file type error and form data
+          header("Location:write_post.php?e=type");
             echo "Incorrect file type";
     //        echo "Sorry, you cannot upload files of this type! Please make sure the extension is jpg, jpeg or png.";
         }
-    echo "Image uploaded";
-  } else {
-    $image_path = ''
-  }
+    } else {
+      $image_path = ''
+    }
 
-  $post = new Post('', '', $category, $member_id, $title, $file_path, $content);
-  $post->new_post($pdo);
+    $post = new Post('', '', $category, $member_id, $title, $file_path, $content);
+    $post->new_post($pdo);
 
-  echo $file_path;
+    // Remove session data and end session;
+    header("Location:profile.php");
 }

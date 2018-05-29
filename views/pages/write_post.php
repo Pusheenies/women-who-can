@@ -13,8 +13,11 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <!-- If not signed in, redirect to sign in page -->
         <?php
+        session_start();
         $member_id = filter_input(INPUT_COOKIE, 'member_id', FILTER_SANITIZE_STRING);
         $security = filter_input(INPUT_COOKIE, 'security', FILTER_SANITIZE_STRING);
+        $error = filter_input(INPUT_GET, 'e', FILTER_SANITIZE_STRING);
+
         if (!$member_id || !$security) {
             header("Location:sign_in.php");
         }
@@ -22,6 +25,14 @@
         if ($security != 'writer') {
             header("Location:../../index.php");
         }
+
+        if($error) {
+          $title = $_SESSION['title'] ?? '';
+          $category = $_SESSION['category'] ?? '';
+          $content = $_SESSION['content'] ?? '';
+        }
+
+        // or use jQuery??
         ?>
     </head>
     <body>
