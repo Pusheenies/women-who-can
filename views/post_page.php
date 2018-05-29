@@ -43,7 +43,7 @@ $_SESSION["post_id"]= $_REQUEST["post"];
                             <li><a href="pages/nav_search_results.php?cat=2">Innovate</a></li>
                             <li><a href="pages/nav_search_results.php?cat=3">Learn</a></li>
                             <li><a href="pages/nav_search_results.php?cat=4">Inspire</a></li>
-                            <li class="icon"><a href="pages/search.html">🔎</a></li>
+                            <li class="icon"><a href="pages/search.php">🔎</a></li>
                         </ul>
                     </div>       
                 </div>

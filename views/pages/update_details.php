@@ -53,7 +53,7 @@
                                 echo "<li><a href='write_post.php'>Write</a></li>";
                             }
                             ?>
-                            <li class="icon"><a href="search.html">🔎</a></li>
+                            <li class="icon"><a href="search.php">🔎</a></li>
                         </ul>
                     </div>       
                 </div>

@@ -18,9 +18,20 @@
     <body>
         <div id="container">
             <div id="header" class="header-w-btn">
-                <div id='corner-btn'>
-                    <a class='btn btn-outline-light' href='../../controllers/sign_out_controller.php'>Sign out</a>
-                </div>
+                <!-- Display Sign in or Sign out button -->
+                <?php
+                $member_id = filter_input(INPUT_COOKIE, 'member_id', FILTER_SANITIZE_STRING);
+                $security = filter_input(INPUT_COOKIE, 'security', FILTER_SANITIZE_STRING);
+                if (!$member_id || !$security) {
+                    echo "<div id='corner-btn'>
+                                <a class='btn btn-outline-light' href='sign_in.php'>Sign in</a>
+                              </div>";
+                } else {
+                    echo "<div id='corner-btn'>
+                                <a class='btn btn-outline-light' href='../../controllers/sign_out_controller.php'>Sign out</a>
+                              </div>";
+                }
+                ?>
                 <a href="../../index.php"><img src="../_img/logo/LogoWhite.png"></a>
             </div>
 
@@ -40,7 +51,7 @@
                             <li><a href="nav_search_results.php?cat=2">Innovate</a></li>
                             <li><a href="nav_search_results.php?cat=3">Learn</a></li>
                             <li><a href="nav_search_results.php?cat=4">Inspire</a></li>
-                            <li class="icon"><a href="search.html">🔎</a></li>
+                            <li class="icon"><a href="search.php">🔎</a></li>
                         </ul>
                     </div>       
                 </div>
@@ -119,3 +130,4 @@
         <script src="../../controllers/search_controller.js"></script>
     </body>
 </html>
+
