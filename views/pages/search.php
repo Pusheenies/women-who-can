@@ -1,29 +1,18 @@
 <!DOCTYPE html>
-
-<?php
-if(isset($_REQUEST["cat"])){
-    $category=$_REQUEST["cat"];
-} else {
-    $category= "";
-}
-if(isset($_REQUEST["hashtag"])){
-    $hashtag= $_REQUEST["hashtag"];
-} else {
-    $hashtag= "";
-}
-?>
 <html>
     <head>
-        <title>WWC - Results</title>
+        <title>WWC - Search</title>
         <meta charset="UTF-8">    
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
         <!--StyleSheets-->
         <link rel="stylesheet" type="text/css" href="../_css/style.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/search.css" />
         <link rel="stylesheet" type="text/css" href="../_css/styles.css" />
         <!--Fonts-->
         <link rel="stylesheet" type="text/css" href="../_css/ss-pika.css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <!-- If not signed in, redirect to sign in page -->
     </head>
 
     <body>
@@ -33,7 +22,6 @@ if(isset($_REQUEST["hashtag"])){
                 <?php
                 $member_id = filter_input(INPUT_COOKIE, 'member_id', FILTER_SANITIZE_STRING);
                 $security = filter_input(INPUT_COOKIE, 'security', FILTER_SANITIZE_STRING);
-                $category = filter_input(INPUT_GET, 'cat', FILTER_SANITIZE_STRING);
                 if (!$member_id || !$security) {
                     echo "<div id='corner-btn'>
                                 <a class='btn btn-outline-light' href='sign_in.php'>Sign in</a>
@@ -59,10 +47,10 @@ if(isset($_REQUEST["hashtag"])){
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav full">
                             <li><a href="profile.php">Profile</a></li>
-                            <li><a <?= ($category === '1') ? "class='peach'": '' ?> href="nav_search_results.php?cat=1">Laugh</a></li>
-                            <li><a <?= ($category === '2') ? "class='peach'": '' ?> href="nav_search_results.php?cat=2">Innovate</a></li>
-                            <li><a <?= ($category === '3') ? "class='peach'": '' ?> href="nav_search_results.php?cat=3">Learn</a></li>
-                            <li><a <?= ($category === '4') ? "class='peach'": '' ?> href="nav_search_results.php?cat=4">Inspire</a></li>
+                            <li><a href="nav_search_results.php?cat=1">Laugh</a></li>
+                            <li><a href="nav_search_results.php?cat=2">Innovate</a></li>
+                            <li><a href="nav_search_results.php?cat=3">Learn</a></li>
+                            <li><a href="nav_search_results.php?cat=4">Inspire</a></li>
                             <?php
                             $security = filter_input(INPUT_COOKIE, 'security', FILTER_SANITIZE_STRING);
                             if ($security === 'writer') {
@@ -76,16 +64,75 @@ if(isset($_REQUEST["hashtag"])){
             </div>
         </div>
 
-        <form>
-            <input type="hidden" id="category" value="<?=$category?>">
-            <input type="hidden" id="hashtag" value="<?=$hashtag?>">
-        </form>
+        <div class="container" id="search">
+                <h1 class="title">Post search</h1>
+                <p class="subtitle text-center">Search by category, hashtag, title or author (or any combination)</p>
+            <form id="form" class="col-sm-6 offset-sm-3">
+                <div>
+                    <div class="form-group">
+                        <label>Category:</label>
+                        <select class="form-control custom-select" id="category">
+                            <option value=""></option>
+                            <option value="Laugh">Laugh</option>
+                            <option value="Innovate">Innovate</option>
+                            <option value="Learn">Learn</option>
+                            <option value="Inspire">Inspire</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Hashtag:</label>
+                        <select class="form-control custom-select" id="hashtag">
+                            <option value=""></option>
+                            <option value="#AI">#AI</option>
+                            <option value="#brain">#brain</option>
+                            <option value="#codelikeagirl">#codelikeagirl</option>
+                            <option value="#computerscience">#computerscience</option>
+                            <option value="#creativity">#creativity</option>
+                            <option value="#employability">#employability</option>
+                            <option value="#entertainment">#entertainment</option>
+                            <option value="#entrepreneurship">#entrepreneurship</option>
+                            <option value="#femaleleaders">#femaleleaders</option>
+                            <option value="#genderequality">#genderequality</option>
+                            <option value="#healthtech">#healthtech</option>
+                            <option value="#hiddenfigures">#hiddenfigures</option>
+                            <option value="#STEM">#STEM</option>
+                            <option value="#study">#study</option>
+                            <option value="#Video">#Video</option>
+                            <option value="#webdeveloper">#webdeveloper</option>
+                            <option value="#WomenInTech">#WomenInTech</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Author's username:</label>
+                        <input type="text" id="author" class="form-control"/>
+                    </div>
+                    <div class="text-center">
+                        <input type="button" id="submit" value="Search" class="peach search-btn"/>
+                    </div>
 
+                </div>
+            </form>
+        </div>
         <div class="container" id="results">
             <!--search results-->
         </div>
 
-        <div class="clear"></div>
+
+        <div class="clear"></div> <!--needed for the footer to be at the bottom-->
+        <!-- NEXT -->
+        <div id="nextlink">
+          <div class="container">
+            <!-- COMMENT OUT IF NEEDED -->
+            <!-- <a href="#" class="left">&larr; Newer Posts</a>
+            <a href="#" class="right">Older Posts &rarr;</a> -->
+          </div>
+          <div class="clear"></div>
+        </div>
+        
         <!-- FOOTER -->
         <div id="footer">
             <div class="container">
@@ -100,6 +147,7 @@ if(isset($_REQUEST["hashtag"])){
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-        <script src="../../controllers/nav_search_controller.js"></script>
+        <script src="../../controllers/search_controller.js"></script>
     </body>
 </html>
+

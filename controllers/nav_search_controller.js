@@ -24,25 +24,21 @@ $(document).ready(function(){
             }
 
             $("#results").empty();
-            $("#results").append("<div id='blogposts' class='left'>"
-                                            +"<ul id='results_list' style='height:auto;'>");
+            $("#results").append("<div id='blogPosts' class='home'>"
+                                            +"<ul id='results_list' class='postList' style='height:auto;'>");
             for(var i=0; i<results.length; i++){
-                var date= new Date(results[i]["post_date"]);
-                var months= ["January","February","March","April","May","June","July","August","September","October","November","December"];
-                var month= months[date.getMonth()];
                 var img_url= "../../"+results[i]["post_image"];
                 var title= unescape(crop_title(results[i]["title"]));
-                $("#results_list").append("<li>"
-                                    +"<div class='blogpic left' style='background-image: url("+img_url+");'></div>"
+                $("#results_list").append("<li class='blogPostsHome'>"
+                                    +"<a href='#'><div class='blogpic left' style='background-image: url("+img_url+");'></div></a>"
                                     +"<div class='right'>"
-                                    +"<h1>"
-                                    +"<a href='../../views/post_page.php?post="+results[i]["post_id"]+"' class='blog_title'>"
+                                    +"<a href='../../views/pages/post_page.php?post="+results[i]["post_id"]+"'>"
+                                    +"<h1 class='blog_title'>"
                                     +title
-                                    +"</a>"
                                     +"</h1>"
+                                    +"</a>"
                                     +"<h6>By <span class='peach'>"+results[i]["username"]+"</span>"
-                                    +" - Posted on "+date.getDate()+" "+month+" "+date.getFullYear()
-                                    +"</h6>"
+                                    +" - Posted on "+results[i]["post_date"]+"</h6>"
                                     +"</div>"
                                     +"</li>");
             }  

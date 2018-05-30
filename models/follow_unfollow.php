@@ -22,5 +22,5 @@ if ($row){
     $stmt->execute(array(":member_id" => $_REQUEST["author"],
                     ":follower_id" => $member_id));
 }
-header("Location: ../views/post_page.php?post=".$_SESSION["post_id"]);
+header("Location: ../views/pages/post_page.php?post=".$_SESSION["post_id"]);
 return;

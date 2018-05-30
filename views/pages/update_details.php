@@ -53,7 +53,7 @@
                                 echo "<li><a href='write_post.php'>Write</a></li>";
                             }
                             ?>
-                            <li class="icon"><a href="search.html">🔎</a></li>
+                            <li class="icon"><a href="search.php">🔎</a></li>
                         </ul>
                     </div>       
                 </div>
@@ -67,8 +67,8 @@
 
                 <div>
                     <form action="../../models/image_upload.php" method="POST" enctype="multipart/form-data">
-                        <div class="form-group row">
-                            <p>Upload a new image:</p>
+                        <div class="form-group row mt-4">
+                            <p>Upload a new profile picture:</p>
                             <input type="file" name="file">
                             <input type="submit" name="submit" value="UPLOAD" class="peach" id="upload_image">
                         </div>

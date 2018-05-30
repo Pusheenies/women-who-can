@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <html>
     <head>
         <title>WWC - Profile</title>
@@ -53,12 +53,13 @@
                                 echo "<li><a href='write_post.php'>Write</a></li>";
                             }
                             ?>
-                            <li class="icon"><a href="search.html">🔎</a></li>
+                            <li class="icon"><a href="search.php">🔎</a></li>
                         </ul>
                     </div>       
                 </div>
             </div>
 
+            <div class="container">
             <div id="about" class="right">
                 <h2>About me</h2>
                 <span id="profile_image"><!-- profile image --></span>
@@ -70,22 +71,26 @@
                 <a href="update_details.php" class="" id="edit_details">Edit details</a>
             </div>
 
-            <div class="container" id="own_posts">
-                <!-- if writer: own posts -->
-            </div>
+            <div id="blogPosts" class="left">
+                <div class="container" id="own_posts">
+                    <!-- if writer: own posts -->
+                </div>
 
-            <div class="container" id="favourites">
-                <!-- favourite posts -->
-            </div>
+                <div class="container" id="favourites">
+                    <!-- favourite posts -->
+                </div>
 
-            <div class="container" id="followers">
-                <!-- followers -->
-            </div>
+                <div class="container" id="followers">
+                    <!-- followers -->
+                </div>
 
-            <div class="container" id="followed">
-                <!-- followed members -->
-            </div>
+                <div class="container" id="followed">
+                    <!-- followed members -->
+                </div>
 
+            </div>
+        </div>
+            <div class="clear"></div>
             <!-- needed for the footer to be at the bottom -->
             <!-- NEXT -->
             <div id="nextlink">

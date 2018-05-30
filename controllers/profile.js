@@ -10,7 +10,7 @@ $(document).ready(function(){
     }
 
     $.getJSON("../../models/profileModel.php", function (member){
-        $("#profile_image").append("<img src='../../"+member.profile_image+"' style='max-height:200px;width:auto;display:block;'>");
+        $("#profile_image").append("<img class='mb-4 text-center' alt='No profile pic' src='../../"+member.profile_image+"' style='max-height:200px;width:auto;display:block;'>");
         $("#forename").append(member.forename);
         $("#surname").append(member.surname);
         $("#username").append(member.username);
@@ -21,7 +21,7 @@ $(document).ready(function(){
         if(member["own_posts"]){
             console.log(member);
             $("#own_posts").append("<div id='blogposts' class='left'>"
-                                    +"<h2>My posts</h2>"
+                                    +"<h2 class='mb-3'>My posts</h2>"
                                     +"<ul id='own_posts_list' style='height:auto;'>");
             for(var i=0; i<member["own_posts"].length; i++){
                 if(member.own_posts[i][2]>1){
@@ -34,11 +34,11 @@ $(document).ready(function(){
                 $("#own_posts_list").append("<li>"
                                         +"<div class='blogpic left' style='background-image: url("+img_url+");'></div>"
                                         +"<div class='right'>"
-                                        +"<h1>"
-                                        +"<a href='../../views/post_page.php?post="+member.own_posts[i][1]+"' class='blog_title'>"
+                                        +"<a href='../../views/pages/post_page.php?post="+member.own_posts[i][1]+"'>"
+                                        +"<h1 class='blog_title'>"
                                         +title
-                                        +"</a>"
                                         +"</h1>"
+                                        +"</a>"
                                         +"<h6>"
                                         +"Posted "+member.own_posts[i][2]+$days
                                         +"</h6>"
@@ -52,7 +52,7 @@ $(document).ready(function(){
         //favourite posts
         if(member["favourites"].length!==0){
             $("#favourites").append("<div id='blogposts' class='left'>"
-                                    +"<h2>My favourite posts</h2>"
+                                    +"<h2 class='mb-3'>My favourite posts</h2>"
                                     +"<ul id='favourites_list' style='height:auto;'>");
             for (var i=0; i<member["favourites"].length; i++){ 
                 if(member.favourites[i][2]>1){
@@ -66,7 +66,7 @@ $(document).ready(function(){
                                             +"<div class='blogpic left' style='background-image: url("+img_url+");'></div>"
                                             +"<div class='right'>"
                                             +"<h1>"
-                                            +"<a href='../../views/post_page.php?post="+member.favourites[i][1]+"' class='blog_title'>"
+                                            +"<a href='../../views/pages/post_page.php?post="+member.favourites[i][1]+"' class='blog_title'>"
                                             +title
                                             +"</a>"
                                             +"</h1>"
@@ -85,8 +85,8 @@ $(document).ready(function(){
 
 
         //followers
-        $("#followers").append("<div id='followers_div' class='left'>"
-                                +"<h2>My followers</h2>");
+        $("#followers").append("<div id='followers_div'>"
+                                +"<h2 class='mb-3'>My followers</h2>");
         if(member["followers"].length!==0){
             for(var i=0; i<member["followers"].length; i++){
                 $("#followers_div").append("<p class='text-center'>"+member.followers[i]+"</p>");
@@ -98,8 +98,8 @@ $(document).ready(function(){
         
 
         //followed members
-        $("#followed").append("<div id='followed_div' class='left'>"
-                                +"<h2>Members I follow</h2>");
+        $("#followed").append("<div id='followed_div'>"
+                                +"<h2 class='mb-3'>Members I follow</h2>");
         if(member["followed"].length!==0){
             for(var i=0; i<member["followed"].length; i++){
                 $("#followed_div").append("<p class='text-center'>"+member.followed[i]+"</p>");

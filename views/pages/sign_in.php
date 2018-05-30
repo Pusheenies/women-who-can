@@ -32,6 +32,7 @@
             <div class="container mb-5">
                 <h1 class="title">Welcome back</h1>
                 <h2>Sign in to access more of the amazing features of our site</h2>
+                <div class="text-center">Not a member? <a class="peach" href="sign_up.php">Sign up</a> to access your personal profile</div>
                 
                 <div class="container">
                     <form id="sign-in" method="post" class="form-signin single-form mb-3">
@@ -48,8 +49,6 @@
                         <input type="submit" value="SIGN IN" class="peach btn-block button"/>
                     </form>
                     <div id="error-msg" class="text-center m-4"><!-- Error message for unsuccessful sign in --></div>
-                    
-                    <div class="text-center">Not a member? <a class="peach" href="sign_up.php">Sign up</a> to access your personal profile</div>
                 </div>
             </div>
             

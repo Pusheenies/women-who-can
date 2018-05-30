@@ -22,6 +22,6 @@ while($row= $stmt->fetch(PDO::FETCH_ASSOC)){
     $hashtags[]= $row["hashtag_id"]; 
 }
 $post["hashtags"]= $hashtags;
-
-$post["post_content"]= utf8_encode($post["post_content"]);
+$post["post_date"] = date_format(date_create($post["post_date"]),"d/m/Y");
+$post["post_content"]= utf8_encode(nl2br($post["post_content"]));
 echo json_encode($post);

@@ -6,6 +6,30 @@ $("#post-image").change(function () {
     $("#img-label").html(img);
 });
 
+$("#hashtags").change(function () {
+    let hashtags = $("#hashtags").val().trim().split(" ");
+    
+    for (let i = 0; i < hashtags.length; i++) {
+        if (hashtags[i].charAt(0) !== '#') {
+            hashtags[i] = ('#' + hashtags[i]);
+        }
+    }
+
+    $("#hashtags").val(hashtags.join(" "));
+});
+
+$("#submit-btn").click(function () {
+    let hashtags = $("#hashtags").val().trim().split(" ");
+    
+    for (let i = 0; i < hashtags.length; i++) {
+        if (hashtags[i].charAt(0) !== '#') {
+            hashtags[i] = ('#' + hashtags[i]);
+        }
+    }
+
+    $("#hashtags").val(hashtags.join(" "));
+});
+
 $(document).ready(function () {
     let url = window.location.href;
     let index = url.lastIndexOf('=');
