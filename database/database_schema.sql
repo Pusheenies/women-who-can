@@ -93,6 +93,14 @@ CREATE TABLE comments (
     FOREIGN KEY (member_id) REFERENCES members(member_id)
 );
 
+CREATE TABLE IF NOT EXISTS password_reset (
+    ID INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255),
+    selector CHAR(16),
+    token CHAR(64),
+    expires BIGINT(20)
+);
+
 -- Trigger to hash passwords
 
 CREATE TRIGGER hash_password BEFORE INSERT ON members
