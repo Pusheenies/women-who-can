@@ -1,0 +1,88 @@
+/* Sign in/out button */
+#corner-btn {
+    display: flex;
+    width: 100%;
+    background: transparent;
+    justify-content: flex-end;
+    padding: 10px 17px 0 0;
+    color: white;
+}
+
+/* Header with button */ 
+.header-w-btn img { margin: 10px auto 50px auto !important; }
+
+/* Home page */
+.home { width: 100% !important; }
+.full { width: 100%; }
+.blog_title { font-size: 30px; }
+.small-link { font-size: 13px; font-style: italic; color: lightgray; }
+
+/* Navbar */
+.icon { margin: auto; }
+
+/* Sign in */
+.single-form {
+    margin: 30px auto;
+    width: 40%;
+}
+
+.form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.button {
+    border: none;
+    background-color: transparent;
+    font-size: 22px;
+    margin: auto;
+}
+
+#footer a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+#footer a:hover, #footer a:active, #footer a:visited {
+    color: grey;
+    text-decoration: none;
+}
+
+.form-signin .form-control {
+position: relative;
+box-sizing: border-box;
+height: auto;
+padding: 10px;
+font-size: 16px;
+}
+
+.title {
+    color: grey;
+    margin: 50px 0 20px 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Media */
+@media (max-width:768px) {
+    #nav ul .icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+        position: relative; 
+    }  
+}
+
+@media (min-width:1100px) {
+    .postList {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .blogPostsHome { width: 47%; }
+}
