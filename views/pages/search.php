@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <html>
     <head>
         <title>WWC - Search</title>
@@ -39,7 +39,7 @@
             <div id="nav" class="navbar navbar-expand-md navbar-light">
                 <div class="container">
                     <ul>
-                        <li><a class="peach" href="../../index.php">Home</a></li>
+                        <li><a href="../../index.php">Home</a></li>
                     </ul>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -51,6 +51,12 @@
                             <li><a href="nav_search_results.php?cat=2">Innovate</a></li>
                             <li><a href="nav_search_results.php?cat=3">Learn</a></li>
                             <li><a href="nav_search_results.php?cat=4">Inspire</a></li>
+                            <?php
+                            $security = filter_input(INPUT_COOKIE, 'security', FILTER_SANITIZE_STRING);
+                            if ($security === 'writer') {
+                                echo "<li><a href='write_post.php'>Write</a></li>";
+                            }
+                            ?>
                             <li class="icon"><a href="search.php">🔎</a></li>
                         </ul>
                     </div>       
@@ -59,53 +65,57 @@
         </div>
 
         <div class="container" id="search">
-                <h1>Post search</h1>
-                <p>Search by category, hashtag, title or author (or any combination)</p>
-            <div id="form" class="col-sm-6 offset-sm-3">
+                <h1 class="title">Post search</h1>
+                <p class="subtitle text-center">Search by category, hashtag, title or author (or any combination)</p>
+            <form id="form" class="col-sm-6 offset-sm-3">
                 <div>
-
-                    <label>Category:</label>
-                    <select class="form-control" id="category">
-                        <option value=""></option>
-                        <option value="Comedy">Comedy</option>
-                        <option value="Innovate">Innovate</option>
-                        <option value="Learn">Learn</option>
-                        <option value="Inspire">Inspire</option>
-                    </select>
-                    <br>
-                    <label>Hashtag:</label>
-                    <select class="form-control" id="hashtag">
-                        <option value=""></option>
-                        <option value="#AI">#AI</option>
-                        <option value="#brain">#brain</option>
-                        <option value="#codelikeagirl">#codelikeagirl</option>
-                        <option value="#computerscience">#computerscience</option>
-                        <option value="#creativity">#creativity</option>
-                        <option value="#employability">#employability</option>
-                        <option value="#entertainment">#entertainment</option>
-                        <option value="#entrepreneurship">#entrepreneurship</option>
-                        <option value="#femaleleaders">#femaleleaders</option>
-                        <option value="#genderequality">#genderequality</option>
-                        <option value="#healthtech">#healthtech</option>
-                        <option value="#hiddenfigures">#hiddenfigures</option>
-                        <option value="#STEM">#STEM</option>
-                        <option value="#study">#study</option>
-                        <option value="#Video">#Video</option>
-                        <option value="#webdeveloper">#webdeveloper</option>
-                        <option value="#WomenInTech">#WomenInTech</option>
-                    </select>
-                    <br>
-                    <label for="title">Title:</label>
-                    <input type="text" id="title" class="form-control" />
-                    <br>
-                    <label for="author">Username of the author:</label>
-                    <input type="text" id="author" class="form-control"/>
+                    <div class="form-group">
+                        <label>Category:</label>
+                        <select class="form-control custom-select" id="category">
+                            <option value=""></option>
+                            <option value="Laugh">Laugh</option>
+                            <option value="Innovate">Innovate</option>
+                            <option value="Learn">Learn</option>
+                            <option value="Inspire">Inspire</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Hashtag:</label>
+                        <select class="form-control custom-select" id="hashtag">
+                            <option value=""></option>
+                            <option value="#AI">#AI</option>
+                            <option value="#brain">#brain</option>
+                            <option value="#codelikeagirl">#codelikeagirl</option>
+                            <option value="#computerscience">#computerscience</option>
+                            <option value="#creativity">#creativity</option>
+                            <option value="#employability">#employability</option>
+                            <option value="#entertainment">#entertainment</option>
+                            <option value="#entrepreneurship">#entrepreneurship</option>
+                            <option value="#femaleleaders">#femaleleaders</option>
+                            <option value="#genderequality">#genderequality</option>
+                            <option value="#healthtech">#healthtech</option>
+                            <option value="#hiddenfigures">#hiddenfigures</option>
+                            <option value="#STEM">#STEM</option>
+                            <option value="#study">#study</option>
+                            <option value="#Video">#Video</option>
+                            <option value="#webdeveloper">#webdeveloper</option>
+                            <option value="#WomenInTech">#WomenInTech</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Author's username:</label>
+                        <input type="text" id="author" class="form-control"/>
+                    </div>
                     <div class="text-center">
                         <input type="button" id="submit" value="Search" class="peach search-btn"/>
                     </div>
 
                 </div>
-            </div>
+            </form>
         </div>
         <div class="container" id="results">
             <!--search results-->
@@ -113,6 +123,16 @@
 
 
         <div class="clear"></div> <!--needed for the footer to be at the bottom-->
+        <!-- NEXT -->
+        <div id="nextlink">
+          <div class="container">
+            <!-- COMMENT OUT IF NEEDED -->
+            <!-- <a href="#" class="left">&larr; Newer Posts</a>
+            <a href="#" class="right">Older Posts &rarr;</a> -->
+          </div>
+          <div class="clear"></div>
+        </div>
+        
         <!-- FOOTER -->
         <div id="footer">
             <div class="container">

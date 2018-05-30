@@ -323,6 +323,7 @@ class rawSearch {
         }
     }
 }
+
 class Search {
     protected $category_id;
     protected $hashtag;
@@ -360,9 +361,12 @@ class Search {
         if(!empty($wheres)){
             $sql.= " WHERE " . implode(" AND ", $wheres);
         }
+        $sql.= " ORDER BY p.post_date DESC";
+
         $stmt= $pdo->prepare($sql);
         $stmt->execute($params);
         while ($row= $stmt->fetch(PDO::FETCH_ASSOC)){
+            $row['post_date'] = date_format(date_create($row['post_date']),"d/m/Y");
             array_push($search_results, $row);
         }
         return $search_results;

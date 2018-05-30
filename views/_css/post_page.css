@@ -1,6 +1,11 @@
-p {
+.post-content, .subtitle {
     font-size: 16px;
 }
+
+.post-content, .comment {
+    color: #7a7a7a;
+}
+
 h1 {
     text-align: center;
 }
@@ -17,10 +22,14 @@ h1 {
 }
 #hashtags {
     margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 #hashtags a {
     padding: 2px 4px 2px 4px;
     margin-right: 5px;
+    margin-bottom: 5px;
 }
 .comment {
     margin-bottom: 30px;

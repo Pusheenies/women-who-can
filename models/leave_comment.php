@@ -13,5 +13,5 @@ if(!empty($_REQUEST["leave_comment"])){
                         ":comment_content" => $_REQUEST["leave_comment"]));   
 }
 
-header("Location: ../views/post_page.php?post=".$_SESSION["post_id"]);
+header("Location: ../views/pages/post_page.php?post=".$_SESSION["post_id"]);
 return;

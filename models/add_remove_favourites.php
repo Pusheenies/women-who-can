@@ -21,5 +21,5 @@ if ($row){
     $stmt= $pdo->prepare("INSERT INTO favourites (post_id, member_id) VALUES (:post_id, :member_id)");
     $stmt->execute(array(":post_id" => $post_id, ":member_id" => $member_id));
 }
-header("Location: ../views/post_page.php?post=".$post_id);
+header("Location: ../views/pages/post_page.php?post=".$post_id);
 return;
