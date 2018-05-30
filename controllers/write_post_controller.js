@@ -9,25 +9,30 @@ $("#post-image").change(function () {
 $("#hashtags").change(function () {
     let hashtags = $("#hashtags").val().trim().split(" ");
     
-    for (let i = 0; i < hashtags.length; i++) {
+    if ($("#hashtags").val().trim()) {
+        for (let i = 0; i < hashtags.length; i++) {
         if (hashtags[i].charAt(0) !== '#') {
             hashtags[i] = ('#' + hashtags[i]);
+            }
         }
-    }
 
-    $("#hashtags").val(hashtags.join(" "));
+        $("#hashtags").val(hashtags.join(" "));
+    }
 });
 
 $("#submit-btn").click(function () {
     let hashtags = $("#hashtags").val().trim().split(" ");
     
-    for (let i = 0; i < hashtags.length; i++) {
+    if ($("#hashtags").val().trim()) {
+        for (let i = 0; i < hashtags.length; i++) {
         if (hashtags[i].charAt(0) !== '#') {
             hashtags[i] = ('#' + hashtags[i]);
+            }
         }
-    }
 
-    $("#hashtags").val(hashtags.join(" "));
+        $("#hashtags").val(hashtags.join(" "));
+    }
+    
 });
 
 $(document).ready(function () {
