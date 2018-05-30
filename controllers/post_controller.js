@@ -1,11 +1,12 @@
 $(document).ready(function (){
     
+    
     $.getJSON("../../models/post_model.php", function(post){
         $("#post_title").append("<h1 class='title'>"+post.title+"</h1>");
         $("#post_username").append("<p>By "+post.username+"</p>");
         var img_url= "../../" + post.post_image;
         $("#post_image").append("<div class='text-center'>"
-                                +"<img src='"+img_url+"' alt='post image' style='height:600px;width:auto;margin-bottom:30px;'>"
+                                +"<img id='post-img' src='"+img_url+"' alt='No post image' style='height:600px;width:auto;margin-bottom:30px;'>"
                                 +"</div>");
 
         $("#post_category_date").append("<p class='subtitle'>"

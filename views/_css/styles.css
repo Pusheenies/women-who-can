@@ -79,6 +79,13 @@ font-size: 16px;
     text-align: center;
 }
 
+/* Display Post Page */
+#post-img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+
 /* Media */
 @media (max-width:768px) {
     #nav ul .icon {
