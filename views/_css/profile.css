@@ -1,6 +1,11 @@
 #about p {
     font-size: 14px;
 }
+#blogposts {
+    width: 100%;
+    float: left;
+    margin-bottom: 50px;
+}
 #followers_div {
     width: 100%;
     float: left;

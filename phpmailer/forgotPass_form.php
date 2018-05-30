@@ -102,6 +102,16 @@ if (isset($_POST["forget-password"])) {
                 </div>
             </div>
             
+            <!-- NEXT -->
+            <div id="nextlink">
+              <div class="container">
+                <!-- COMMENT OUT IF NEEDED -->
+<!--                <a href="#" class="left">&larr; Newer Posts</a>
+                <a href="#" class="right">Older Posts &rarr;</a>-->
+              </div>
+              <div class="clear"></div>
+            </div>
+            
             <!-- FOOTER -->
             <div id="footer">
                 <div class="container">
