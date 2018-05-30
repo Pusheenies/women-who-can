@@ -1,0 +1,27 @@
+#confirm {
+    border: none;
+    background-color: white;
+    font-size: 22px;
+}
+#upload_image {
+    border: none;
+    background-color: white;
+    font-size: 18px;
+}
+#form_container {
+    text-align:center;
+}
+form {
+    width:40%;
+    display: inline-block;
+}
+label {
+    text-align:right;
+}
+p {
+    font-size: 16px;
+}
+#footer p { font-size: 12px; }
+textarea {
+    height: 150px;
+}

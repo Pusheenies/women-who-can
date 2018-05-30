@@ -1,0 +1,192 @@
+
+/* STYLE RESER */
+
+body, html, ul, li {
+    padding: 0;
+    height: 100%;
+    margin: 0;
+    color: #bababa;
+    /*font-family:*/
+}
+
+.right { float: right; }
+.left { float: left; }
+.clear { clear: both; }
+
+a, a:hover, a:visited { text-decoration: none; transition: color 0.3s; -webkit-transition: 0.3s; }
+
+ul { list-style: none;}
+
+.container {
+  width: 80%;
+  max-width: 1100px;
+  /* background-color: green; */
+  padding: 0;
+}
+
+/*Fonts*/
+
+body { font-family: 'Open Sans', sans-serif; }
+.icon { font-family: "SSPika"; }
+
+.peach, #about a { color: #ffb676; }
+.peach:hover, #about a:hover { color: #f49847; }
+a { color: darkgrey; }
+a:hover { color: grey; }
+.icon a { color: white; }
+#nextlink a:hover { color: #f49847; }
+h2, #nextlink, #about a { text-transform: uppercase; }
+#footer { color: #ffffff; }
+
+p { font-size: 12px; }
+h6 { font-size: 12px; }
+#about ul li { font-size: 14px; }
+h2 { font-size: 18px; }
+#about h3 { font-size: 18px; }
+
+h6 a, #about a { font-weight: bold; }
+
+#footer, h2, h3 { text-align: center; }
+
+#about ul li { line-height: 26px; }
+#about h3 { line-height: 36px; }
+
+
+
+
+/* TOP */
+
+#header {
+  background-image: url(../_img/o-BLACK-BUSINESS-WOMAN-DESK-facebook.jpg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+#header img { margin: 50px auto; }
+
+/* NAV */
+
+#nav { padding: 14px 0; box-shadow:  0 0 10px lightgray; margin-bottom: 50px; }
+/*#nav ul { position: relative; }*/
+#nav ul li { display: inline-block; margin-right: 30px; }
+
+
+#nav ul .icon {
+  /*position: absolute;*/
+  /*right: 0;*/
+  margin-right: 0;
+}
+#nav ul .icon a {
+  background: #ffb676;
+  padding: 15px 18px;
+}
+
+#nav ul .icon a:hover {
+  background: #f49847;
+}
+
+/* BLOG */
+
+#blogPosts {
+  width: 60%;
+  float: left;
+}
+
+#blogPosts ul li {
+  height: 50px;
+  height: 250px;
+  box-shadow:  0 0 10px lightgray;
+  margin-bottom: 50px;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+  -webkit-transition: opacity 0.3s;
+}
+
+#blogPosts ul li:hover {
+  opacity: 1;
+}
+
+.blogpic {
+  width: 200px;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+}
+
+#blogPosts .right {
+  width: calc(100% - 230px);
+  width: -moz-calc(100% - 230px);
+  width: -webkit-calc(100% - 230px);
+  width: -o-calc(100% - 230px);
+  position: relative;
+  height: 250px;
+}
+
+#blogPosts h1 {
+  margin-top: 30px;
+  margin-right: 20px;
+}
+
+#blogPosts h6 {
+  position: absolute;
+  bottom: 30px;
+}
+
+
+
+
+/* ABOUT */
+
+#about {
+  width: 30%;
+}
+
+#about img {
+  width: 100%;
+  height: auto;
+  margin: 10px auto;
+}
+
+#about ul { margin-bottom: 30px; }
+#about h2 { margin-bottom: 30px; }
+
+
+/* BOTTOM */
+
+#nextlink {
+  margin: 50px 0;
+}
+
+#footer {
+  background: lightgray;
+  padding: 40px;
+}
+
+
+
+
+/* MOBILE STYLING For devices smaller than 840px */
+
+@media (max-width:900px) {
+#about { display: none; }
+#blogPosts { width: 100%; }
+}
+
+@media (max-width:560px) {
+.container { width: 90%; }
+}
+
+/* @media (max-width:840px) {
+#container { width: 100%; }
+.section { width: 80%; margin: 10%; }
+
+}
+
+@media (min-width:440px) {
+.right { float: right; }
+}
+
+@media (max-width:440px) {
+.bookReview img { margin-left: 30%; }
+.right { margin-top: 20px; width: 100%; }
+} */

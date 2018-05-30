@@ -1,0 +1,22 @@
+#about p {
+    font-size: 14px;
+}
+#followers_div {
+    width: 60%;
+    float: left;
+    margin-bottom: 50px;
+}
+#followers_div p {
+    font-size: 14px;
+}
+#followed_div {
+    width: 60%;
+    float: left;
+    margin-bottom: 50px;
+}
+#followed_div p {
+    font-size: 14px;
+}
+#no_fav {
+    font-size: 14px;
+}
