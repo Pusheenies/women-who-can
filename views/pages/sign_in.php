@@ -15,6 +15,7 @@
         <?php
             $member_id = filter_input(INPUT_COOKIE, 'member_id', FILTER_SANITIZE_STRING);
             $security = filter_input(INPUT_COOKIE, 'security', FILTER_SANITIZE_STRING);
+            $reset = filter_input(INPUT_GET, 'reset', FILTER_SANITIZE_STRING);
             if ($member_id && $security) {
                 header("Location:../../index.php");
             }
@@ -40,6 +41,7 @@
                         <input type="text" name="username" id="username" class="form-control" placeholder="AdaLovelace" required autofocus/>
                         <label class="sr-only" for="password">Password</label>
                         <input type="password" name="password" id="password" class="form-control" placeholder="••••••••••" required/>
+                        <div class="text-center mt-2"><a class="peach" href="../../phpmailer/forgotPass_form.php">Forgot your password?</a></div>
                         <div class="form-group mt-3 text-center">
                             <div class="form-check">
                                 <input class="form-check-input" name="remember" value="checked" type="checkbox" id="remember">
@@ -48,7 +50,9 @@
                         </div>
                         <input type="submit" value="SIGN IN" class="peach btn-block button"/>
                     </form>
-                    <div id="error-msg" class="text-center m-4"><!-- Error message for unsuccessful sign in --></div>
+                    <div id="error-msg" class="text-center m-4">
+                        <?=$reset ? "Your password was reset successfully" : ""?>
+                    </div>
                 </div>
             </div>
             
