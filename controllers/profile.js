@@ -65,8 +65,8 @@ $(document).ready(function(){
                 $("#favourites_list").append("<li>"
                                             +"<div class='blogpic left' style='background-image: url("+img_url+");'></div>"
                                             +"<div class='right'>"
-                                            +"<h1>"
-                                            +"<a href='../../views/pages/post_page.php?post="+member.favourites[i][1]+"' class='blog_title'>"
+                                            +"<h1 class='blog_title'>"
+                                            +"<a href='../../views/pages/post_page.php?post="+member.favourites[i][1]+"'>"
                                             +title
                                             +"</a>"
                                             +"</h1>"
