@@ -78,7 +78,7 @@ $(document).ready(function(){
             }
         } else {
             $("#favourites").append("<div id='blogposts' class='left' style='margin-bottom:50px;'>"
-                                    +"<h2>My favourite posts</h2>"
+                                    +"<h2 class='text-center'>My favourite posts</h2>"
                                     +"<p class='text-center' id='no_fav'>No favourite posts yet.</p>"
                                     +"</div>");
         }
